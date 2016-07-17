@@ -1,0 +1,204 @@
+<section id="content">
+
+    <!--breadcrumbs start-->
+    <div id="breadcrumbs-wrapper">
+        <!-- Search for small screen -->
+        <div class="header-search-wrapper grey hide-on-large-only">
+            <i class="mdi-action-search active"></i>
+            <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize">
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <h5 class="breadcrumbs-title">Personal Information</h5>
+                    <ol class="breadcrumbs">
+                        <li><a href="#/">Dashboard</a>
+                        </li>
+                        <li><a href="#/clients">Clients</a>
+                        </li>
+                        <li class="active">Personal Information</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--breadcrumbs end-->
+
+
+    <!--start container-->
+    <div class="container">
+        <div class="section">
+
+            <p class="caption">Includes predefined classes for easy layout options.</p>
+
+            <div class="divider"></div>
+            <!--Basic Form-->
+            <div id="basic-form" class="section">
+                <div class="row">
+                    <div class="col s12 m12 l6">
+                        <div class="card-panel">
+                            <h4 class="header2">Personal Information</h4>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="name" type="text" ng-model="formData.first_name">
+                                            <label for="first_name">First Name</label>
+                                        </div>
+
+                                        <div class="input-field col s6">
+                                            <input id="name" type="text" ng-model="formData.middle_name">
+                                            <label for="middle_name">Middle Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="name" type="text" ng-model="formData.last_name">
+                                            <label for="last_name">Last Name</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <p><label for="Gender">Gender</label>
+                                            <p>
+                                                <input class="with-gap" name="gender" type="radio" ng-value="Male" id="Male" />
+                                                <label for="test3">Male</label>
+
+                                                <input class="with-gap" name="gender" type="radio" ng-value="Female" id="Female" />
+                                                <label for="Female">Female</label>
+                                            </p>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <p><label for="dob">DOB</label></p>
+                                            <input type="date" class="datepicker" ng-model="formData.dob">
+                                        </div>
+
+                                        <div class="input-field col s6">
+                                            <p><label for="dob">Marriage Anniversary</label></p>
+                                            <input type="date" class="datepicker" ng-model="formData.marriage_ani">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="name" type="text" ng-model="formData.pan_card">
+                                            <label for="pan_card">PAN card</label>
+                                        </div>
+
+                                        <div class="input-field col s6">
+                                            <input id="personal_email" type="email" ng-model="formData.pers_email">
+                                            <label for="email">Email</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s6">
+                                            <input id="phone" type="number" ng-model="formData.pers_phone">
+                                            <label for="password">Phone no.</label>
+                                        </div>
+                                        <div class="input-field col s6">
+                                            <input id="mobile" type="number" ng-model="formData.pers_mobile">
+                                            <label for="mobile">Mobile no.</label>
+                                        </div>
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Form with placeholder -->
+                    <div class="col s12 m12 l6">
+                        <div class="card-panel">
+                            <h4 class="header2">Bank Information</h4>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input  id="bank_name" type="text" ng-model="formData.bank_name">
+                                            <label for="bank_name">Bank Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input  id="account_no" type="text" ng-model="formData.account_no">
+                                            <label for="account_no">Account No</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input  id="bank_address" type="text" ng-model="formData.bank_add">
+                                            <label for="bank_address">Bank Address</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input  id="city" type="text" ng-model="formData.city">
+                                            <label for="city">City</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <input  id="ifci_code" type="text" ng-model="formData.ifci_code">
+                                            <label for="ifci_code">IFCI Code</label>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m12 l12">
+                    <div class="card-panel">
+                        <h4 class="header2">Business Information</h4>
+                        <div class="row">
+                            <form class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input  id="Occupation" type="text" ng-model="formData.occupation">
+                                        <label for="Occupation">Occupation</label>
+                                    </div>
+                                
+                                    <div class="input-field col s6">
+                                        <input  id="busi_address" type="text" ng-model="formData.occu_addr">
+                                        <label for="busi_address">Address</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <input  id="phone_no" type="number" ng-model="formData.occu_phone">
+                                        <label for="phone_no">Phone No.</label>
+                                    </div>
+                                
+                                    <div class="input-field col s6">
+                                        <input  id="emailId" type="email" ng-model="formData.occu_email">
+                                        <label for="emailId">Email ID</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <input  id="website" type="text" ng-model="formData.occu_website">
+                                        <label for="website">Website</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <button class="btn cyan waves-effect waves-light right" type="submit" name="action" ng-click="saveFormData(formData)">Submit
+                                <i class="mdi-content-send right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Form with icon prefixes -->
+            
+        </div>
+    </div>
+</section>
