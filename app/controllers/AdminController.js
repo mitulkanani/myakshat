@@ -1,16 +1,6 @@
-app.controller('ItemController', function(saveFormdata, getBday, $scope, $http, uiGridConstants) {
-
-    loadAPIData();
-    /***   Get Todays B'day and anniversary  ***/
-    function loadAPIData() {
-        var Bdays = getBday.get({});
-        Bdays.$promise.then(function(data) {
-            $scope.bdays = data.bdays;
-            $scope.anniversary = data.anniver;
-        });
-    }
+app.controller('AdminController', function(saveFormdata, $scope, $http, uiGridConstants) {
+    
     $scope.saveFormData = function(formData) {
-        console.log(formData)
         var SaveFromData = saveFormdata.post(formData);
         SaveFromData.$promise.then(function(result) {
             $scope.devices = result;
@@ -43,6 +33,8 @@ app.controller('ItemController', function(saveFormdata, getBday, $scope, $http, 
             });
         }
     }
+
+
 
 
     //Grid of table
@@ -129,7 +121,6 @@ app.controller('ItemController', function(saveFormdata, getBday, $scope, $http, 
         var _scope = $scope;
         return $http.get(url)
                 .success(function(data) {
-                    $scope.totalClient = data.length;
                     var firstRow = (curPage - 1) * pageSize;
                     $scope.gridOptions.totalItems = data.length;
                     $scope.gridOptions.data = data.slice(firstRow, firstRow + pageSize)
@@ -137,3 +128,20 @@ app.controller('ItemController', function(saveFormdata, getBday, $scope, $http, 
     };
     getPage(1, $scope.gridOptions.paginationPageSize);
 });
+//
+//
+//app.filter('mapGender', function() {
+//    return function(input) {
+//        switch (input) {
+//            case 1:
+//                return 'female';
+//                break;
+//            case 2:
+//                return 'male';
+//                break;
+//            default:
+//                return 'unknown';
+//                break;
+//        }
+//    };
+//});

@@ -35,14 +35,16 @@
         <!-- Custome CSS-->    
         <link href="{{ asset('/css/custom/custom.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
 
-
+        <link href="{{ asset('/css/ui-grid.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
         <!-- INCLUDED PLUGIN CSS ON THIS PAGE -->
         <link href="js/plugins/prism/prism.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="js/plugins/data-tables/css/jquery.dataTables.min.css" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="{{ asset('/js/plugins/perfect-scrollbar/perfect-scrollbar.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
         <link href="{{ asset('/js/plugins/chartist-js/chartist.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
 
-  
+        <style>
+            .ui-grid-viewport{overflow-x: scroll;}
+        </style>
     </head>
 
     <body ng-app="main-App">
@@ -70,8 +72,6 @@
                             <input type="text" name="Search" class="header-search-input z-depth-2" placeholder="Explore Materialize"/>
                         </div>
                         <ul class="right hide-on-med-and-down">
-                            <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light translation-button"  data-activates="translation-dropdown"><img src="{{ asset('/images/flag-icons/United-States.png')}}" alt="USA" /></a>
-                            </li>
                             <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light toggle-fullscreen"><i class="mdi-action-settings-overscan"></i></a>
                             </li>
                             <li><a href="javascript:void(0);" class="waves-effect waves-block waves-light notification-button" data-activates="notifications-dropdown"><i class="mdi-social-notifications"><small class="notification-badge">5</small></i>
@@ -81,22 +81,7 @@
                             <li><a href="#" data-activates="chat-out" class="waves-effect waves-block waves-light chat-collapse"><i class="mdi-communication-chat"></i></a>
                             </li>
                         </ul>
-                        <!-- translation-button -->
-                        <ul id="translation-dropdown" class="dropdown-content">
-                            <li>
-                                <a href="#!"><img src="images/flag-icons/United-States.png" alt="English" />  <span class="language-select">English</span></a>
-                            </li>
-                            <li>
-                                <a href="#!"><img src="images/flag-icons/France.png" alt="French" />  <span class="language-select">French</span></a>
-                            </li>
-                            <li>
-                                <a href="#!"><img src="images/flag-icons/China.png" alt="Chinese" />  <span class="language-select">Chinese</span></a>
-                            </li>
-                            <li>
-                                <a href="#!"><img src="images/flag-icons/Germany.png" alt="German" />  <span class="language-select">German</span></a>
-                            </li>
 
-                        </ul>
                         <!-- notifications-dropdown -->
                         <ul id="notifications-dropdown" class="dropdown-content">
                             <li>
@@ -150,17 +135,8 @@
                                     <ul id="profile-dropdown" class="dropdown-content">
                                         <li><a href="#"><i class="mdi-action-face-unlock"></i> Profile</a>
                                         </li>
-                                        <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
-                                        </li>
-                                        <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
-                                        </li>
-                                        <li><a href="#"><i class="mdi-hardware-keyboard-tab"></i> Logout</a>
-                                        </li>
                                     </ul>
-                                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown">Mitul Kanani<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#/" data-activates="profile-dropdown">Mitul Kanani<i class="mdi-navigation-arrow-drop-down right"></i></a>
                                     <p class="user-roal">Administrator</p>
                                 </div>
                             </div>
@@ -409,10 +385,10 @@
                 <!-- //////////////////////////////////////////////////////////////////////////// -->
 
                 <!-- START CONTENT -->
-                
-                    <div >
-                        <ng-view></ng-view>
-                    </div>
+
+                <div >
+                    <ng-view></ng-view>
+                </div>
                 <!-- END CONTENT -->
 
                 <!-- //////////////////////////////////////////////////////////////////////////// -->
@@ -434,7 +410,7 @@
                         <li class="li-hover">
                             <ul class="chat-collapsible" data-collapsible="expandable">
                                 <li>
-                                    <div class="collapsible-header teal white-text active"><i class="mdi-social-whatshot"></i>Recent Activity</div>
+                                    <div class="collapsible-header teal white-text"><i class="mdi-social-whatshot"></i>Recent Activity</div>
                                     <div class="collapsible-body recent-activity">
                                         <div class="recent-activity-list chat-out-list row">
                                             <div class="col s3 recent-activity-list-icon"><i class="mdi-action-add-shopping-cart"></i>
@@ -479,7 +455,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="collapsible-header light-blue white-text active"><i class="mdi-editor-attach-money"></i>Sales Repoart</div>
+                                    <div class="collapsible-header light-blue white-text"><i class="mdi-editor-attach-money"></i>Sales Repoart</div>
                                     <div class="collapsible-body sales-repoart">
                                         <div class="sales-repoart-list  chat-out-list row">
                                             <div class="col s8">Target Salse</div>
@@ -504,7 +480,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="collapsible-header red white-text"><i class="mdi-action-stars"></i>Favorite Associates</div>
+                                    <div class="collapsible-header red white-text active"><i class="mdi-action-stars"></i>Favorite Associates</div>
                                     <div class="collapsible-body favorite-associates">
                                         <div class="favorite-associate-list chat-out-list row">
                                             <div class="col s4"><img src="images/avatar.jpg" alt="" class="circle responsive-img online-user valign profile-image">
@@ -569,13 +545,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col l6 s12">
-                        <h5 class="white-text">World Market</h5>
-                        <p class="grey-text text-lighten-4">World map, world regions, countries and cities.</p>
+                        <h5 class="white-text">World Map</h5>
                         <div id="world-map-markers"></div>
                     </div>
                     <div class="col l4 offset-l2 s12">
-                        <h5 class="white-text">Sales by Country</h5>
-                        <p class="grey-text text-lighten-4">A sample polar chart to show sales by country.</p>
+                        <h5 class="white-text">Akshat</h5>
+                        <p class="grey-text text-lighten-4">One Stop Solution.</p>
                         <div id="polar-chart-holder">
                             <canvas id="polar-chart-country" width="200"></canvas>
                         </div>
@@ -584,8 +559,8 @@
             </div>
             <div class="footer-copyright">
                 <div class="container">
-                    Copyright © 2015 <a class="grey-text text-lighten-4" href="http://themeforest.net/user/geekslabs/portfolio?ref=geekslabs" target="_blank">GeeksLabs</a> All rights reserved.
-                    <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="http://geekslabs.com/">GeeksLabs</a></span>
+                    Copyright Â© 2016 <a class="grey-text text-lighten-4" href="http://Akshat.com" target="_blank">Akshat</a> All rights reserved.
+                    <span class="right"> Design and Developed by <a class="grey-text text-lighten-4" href="#">Mitul B Kanani</a></span>
                 </div>
             </div>
         </footer>
@@ -602,6 +577,14 @@
         <!--Angular JS--> 
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>  
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.min.js"></script>
+
+        <!-- ui-table -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
+        <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
+        <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
+        <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+        <script src="{{ asset('/js/ui-grid.js')}}"></script>
 
         <!--materialize js-->
         <script type="text/javascript" src="{{ asset('/js/materialize.min.js')}}"></script>
@@ -646,23 +629,16 @@
 
         <!--App Controller--> 
         <script src="{{ asset('/app/controllers/ItemController.js')}}"></script>
+        <script src="{{ asset('/app/controllers/AdminController.js')}}"></script>
         <!-- Toast Notification -->
         <script type="text/javascript">
             // Toast Notification
-            $(window).load(function () {
-                setTimeout(function () {
-                    Materialize.toast('<span>Hiya! I am a toast.</span>', 1500);
-                }, 1500);
-                setTimeout(function () {
-                    Materialize.toast('<span>You can swipe me too!</span>', 3000);
-                }, 5000);
-                setTimeout(function () {
-                    Materialize.toast('<span>You have new order.</span><a class="btn-flat yellow-text" href="#">Read<a>', 3000);
-                }, 15000);
+            $(window).load(function() {
+//                
             });
 
 
-            $(function () {
+            $(function() {
                 // Google Maps  
                 $('#map-canvas').addClass('loading');
                 var latlng = new google.maps.LatLng(40.6700, -73.9400); // Set your Lat. Log. New York
@@ -680,7 +656,7 @@
                 };
                 var map = new google.maps.Map(document.getElementById("map-canvas"), settings);
 
-                google.maps.event.addDomListener(window, "resize", function () {
+                google.maps.event.addDomListener(window, "resize", function() {
                     var center = map.getCenter();
                     google.maps.event.trigger(map, "resize");
                     map.setCenter(center);
@@ -710,7 +686,7 @@
                     title: "Shapeshift Interactive",
                     zIndex: 3});
 
-                google.maps.event.addListener(companyMarker, 'click', function () {
+                google.maps.event.addListener(companyMarker, 'click', function() {
                     infowindow.open(map, companyMarker);
                     pageView('http://demo.geekslabs.com/#address');
                 });
@@ -721,69 +697,4 @@
 
     <!-- Mirrored from demo.geekslabs.com/materialize/v3.1/layout-fullscreen.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Jul 2016 13:39:30 GMT -->
 </html>
-<!------------------- mitul kanani's design is here------------->
-<!--<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel 5.2</title>
 
-         Fonts 
-        <link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-
-         HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries 
-         WARNING: Respond.js doesn't work if you view the page via file:// 
-        [if lt IE 9]>
-                <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-                <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]
-        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
-
-        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
-
-         Angular JS 
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>  
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.min.js"></script>
-
-         MY App 
-        <script src="{{ asset('/app/packages/dirPagination.js')}}"></script>
-        <script src="{{ asset('/app/routes.js')}}"></script>
-        <script src="{{ asset('/app/services/myServices.js')}}"></script>
-        <script src="{{ asset('/app/helper/myHelper.js')}}"></script>
-
-         App Controller 
-        <script src="{{ asset('/app/controllers/ItemController.js')}}"></script>
-
-    </head>
-    <body ng-app="main-App">
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Laravel 5.2</a>
-                </div>
-
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="#/">Home</a></li>
-                        <li><a href="#/items">Item</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        <div class="container">
-            <ng-view></ng-view>
-        </div>
-
-         Scripts 
-
-    </body>
-</html>-->

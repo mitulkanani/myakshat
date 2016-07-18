@@ -29,7 +29,7 @@ class AdminController extends Controller {
         
         if (Auth::check())
         {
-            return Redirect::to("/admindashboard/");
+            return Redirect::to("/admindashboard/myakshat");
         }	
         return view('adminsignin');
     }
@@ -40,7 +40,7 @@ class AdminController extends Controller {
 
         if (Auth::attempt(['username' => $username, 'password' => $password]))
         {
-            return Redirect::to("/admindashboard/");
+            return Redirect::to("/");
         }
 
         return Redirect::back()
@@ -50,6 +50,6 @@ class AdminController extends Controller {
     public function getLogout()
     {
         Auth::logout();
-        return Redirect::to('/admin');
+        return Redirect::to('/');
     }
 }

@@ -1,5 +1,10 @@
+<style>
+    .grid {
+        height: 500px;
+    }
+    .ui-grid-viewport{overflow-x: scroll;}
+</style>
 <section id="content">
-
     <!--breadcrumbs start-->
     <div id="breadcrumbs-wrapper">
         <!-- Search for small screen -->
@@ -10,7 +15,7 @@
         <div class="container">
             <div class="row">
                 <div class="col s12 m12 l12">
-                    <h5 class="breadcrumbs-title">Personal Information</h5>
+                    <h5 class="breadcrumbs-title">Create Member</h5>
                     <ol class="breadcrumbs">
                         <li><a href="#/">Dashboard</a>
                         </li>
@@ -28,10 +33,6 @@
     <!--start container-->
     <div class="container">
         <div class="section">
-
-            <p class="caption">Includes predefined classes for easy layout options.</p>
-
-            <div class="divider"></div>
             <!--Basic Form-->
             <div id="basic-form" class="section">
                 <div class="row">
@@ -162,7 +163,7 @@
                                         <input  id="Occupation" type="text" ng-model="formData.occupation">
                                         <label for="Occupation">Occupation</label>
                                     </div>
-                                
+
                                     <div class="input-field col s6">
                                         <input  id="busi_address" type="text" ng-model="formData.occu_addr">
                                         <label for="busi_address">Address</label>
@@ -173,7 +174,7 @@
                                         <input  id="phone_no" type="number" ng-model="formData.occu_phone">
                                         <label for="phone_no">Phone No.</label>
                                     </div>
-                                
+
                                     <div class="input-field col s6">
                                         <input  id="emailId" type="email" ng-model="formData.occu_email">
                                         <label for="emailId">Email ID</label>
@@ -198,7 +199,15 @@
                 </div>
             </div>
             <!-- Form with icon prefixes -->
-            
+        </div>
+    </div>
+    <!-- Grid Data-table (ui-grid) -->
+    <div class="divider"></div>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div class="card-panel">
+                <div ui-grid="gridOptions" ui-grid-pagination ui-grid-selection ui-grid-exporter class="grid"></div>
+            </div>
         </div>
     </div>
 </section>

@@ -1,11 +1,14 @@
-var app = angular.module('main-App', ['ngRoute','ngResource']);
-
+var app = angular.module('main-App', ['ngRoute', 'ngResource', 'ngAnimate', 'ngTouch', 'ui.grid', 'ui.grid.pagination', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.moveColumns']);
+app.config(function($interpolateProvider) {
+    $interpolateProvider.startSymbol('{[{');
+    $interpolateProvider.endSymbol('}]}');
+});
 app.config(['$routeProvider',
-    function ($routeProvider) {
+    function($routeProvider) {
         $routeProvider.
                 when('/', {
                     templateUrl: 'templates/home.html',
-                    controller: 'AdminController'
+                    controller: 'ItemController'
                 }).
                 when('/clients', {
                     templateUrl: 'templates/clients.html',
@@ -13,6 +16,6 @@ app.config(['$routeProvider',
                 }).
                 otherwise('/', {
                     templateUrl: 'templates/home.html',
-                    controller: 'AdminController'
+                    controller: 'ItemController'
                 });
     }]);
