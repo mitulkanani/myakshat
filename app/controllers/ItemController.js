@@ -5,10 +5,12 @@ app.controller('ItemController', function(saveFormdata, getBday, $scope, $http, 
     function loadAPIData() {
         var Bdays = getBday.get({});
         Bdays.$promise.then(function(data) {
+			console.log(data)
             $scope.bdays = data.bdays;
             $scope.anniversary = data.anniver;
         });
     }
+	$scope.dateToday = new Date();
     $scope.saveFormData = function(formData) {
         console.log(formData)
         var SaveFromData = saveFormdata.post(formData);

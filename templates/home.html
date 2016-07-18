@@ -9,7 +9,7 @@
                     <ul id="task-card" class="collection with-header">
                         <li class="collection-header cyan">
                             <h4 class="task-card-title">Today's Birth Date</h4>
-                            <p class="task-card-date">March 26, 2015</p>
+                            <p class="task-card-date">{[{dateToday | date:'MMMM dd, yyyy'}]}</p>
                         </li>
                         <li class="collection-item dismissable" ng-repeat="bday in bdays">
                             <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> {[{bday.firstname}]}&nbsp;{[{ bday.lastname}]} &nbsp;
@@ -24,7 +24,7 @@
                     <ul id="task-card" class="collection with-header">
                         <li class="collection-header cyan">
                             <h4 class="task-card-title">Today's  Anniversary </h4>
-                            <p class="task-card-date">March 26, 2015</p>
+                            <p class="task-card-date">{[{dateToday | date:'MMMM dd, yyyy'}]}</p>
                         </li>
                         <li class="collection-item dismissable" ng-repeat="annivers in anniversary">
                             <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> {[{annivers.firstname}]}&nbsp;{[{ annivers.lastname}]} &nbsp;

@@ -49,8 +49,8 @@ class ClientController extends Controller {
         $client_data->middlename = Input::get('middle_name');
         $client_data->lastname = Input::get('last_name');
         $client_data->gender = Input::get('gender');
-        $client_data->dob = Input::get('dob');
-        $client_data->marriage_ani = Input::get('marriage_ani');
+        $client_data->dob = date('Y-m-d', strtotime(Input::get('dob')));
+        $client_data->marriage_ani = date('Y-m-d', strtotime(Input::get('marriage_ani')));
         $client_data->pan_card = Input::get('pan_card');
         $client_data->pers_email = Input::get('pers_email');
         $client_data->pers_phone = Input::get('pers_phone');
