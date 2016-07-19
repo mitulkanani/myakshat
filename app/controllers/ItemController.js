@@ -1,4 +1,4 @@
-app.controller('ItemController', function(saveFormdata, getBday, $scope, $http, uiGridConstants) {
+app.controller('ItemController', function(saveFormdata, getBday, $scope, $http,$location,$routeParams, uiGridConstants,EditData) {
 
     loadAPIData();
     /***   Get Todays B'day and anniversary  ***/
@@ -51,9 +51,17 @@ app.controller('ItemController', function(saveFormdata, getBday, $scope, $http, 
     var paginationOptions = {
         sort: null
     };
-
+	if($routeParams.cliedit=="cliedit" && $routeParams.id !=""){
+		var data ={};
+		data.clientId=$routeParams.id;
+		var EditDatas = EditData.post(data);
+        EditDatas.$promise.then(function(result) {
+			console.log(result)
+            $scope.formData = result;
+        })
+	}
     $scope.edit = function(row) {
-        console.log(row.entity.id);
+		$location.path('/clients/cliedit/'+row.entity.id);
     };
     $scope.view = function(row) {
         console.log(row.entity.id);

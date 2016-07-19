@@ -29,6 +29,10 @@ class ClientController extends Controller {
         $clients = Client::all();
         return response()->json($clients);
     }
+	public function EditData() {
+        $client = Client::find(Input::get('clientId'));
+        return response()->json($client);
+    }
 
     public function getBday() {
         $Reqdate = Carbon\Carbon::now()->month;
@@ -49,9 +53,9 @@ class ClientController extends Controller {
 
     public function saveFormdata(Request $request) {
         $client_data = new Client();
-        $client_data->firstname = Input::get('first_name');
-        $client_data->middlename = Input::get('middle_name');
-        $client_data->lastname = Input::get('last_name');
+        $client_data->firstname = Input::get('firstname');
+        $client_data->middlename = Input::get('middlename');
+        $client_data->lastname = Input::get('lastname');
         $client_data->gender = Input::get('gender');
         $client_data->dob = date('Y-m-d', strtotime(Input::get('dob')));
         $client_data->marriage_ani = date('Y-m-d', strtotime(Input::get('marriage_ani')));

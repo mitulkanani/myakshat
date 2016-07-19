@@ -42,3 +42,20 @@ app.factory('getBday', function($resource) {
             }
     );
 });
+app.factory('EditData', function($resource) {
+    return $resource(
+            "EditData",
+            {},
+            {
+                "post": {
+                    method: 'POST',
+                    params: {},
+                    isArray: false,
+                    headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json"
+                    }
+                }
+            }
+    );
+});

@@ -29,7 +29,6 @@
     </div>
     <!--breadcrumbs end-->
 
-
     <!--start container-->
     <div class="container">
         <div class="section">
@@ -43,19 +42,19 @@
                                 <form class="col s12">
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="name" type="text" ng-model="formData.first_name">
-                                            <label for="first_name">First Name</label>
+                                            <input id="name" placeholder="First Name"  type="text" value="formData.firstname" ng-model="formData.firstname">
+											<label for="mobile">First Name</label>
                                         </div>
-
+										<input ng-model="formData.id" type="hidden">
                                         <div class="input-field col s6">
-                                            <input id="name" type="text" ng-model="formData.middle_name">
-                                            <label for="middle_name">Middle Name</label>
+                                            <input id="name" type="text" placeholder="Middle Name" ng-model="formData.middlename">
+											<label for="mobile">Middle Name</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="name" type="text" ng-model="formData.last_name">
-                                            <label for="last_name">Last Name</label>
+                                            <input id="name" type="text" placeholder="Last Name" ng-model="formData.lastname">
+											<label for="mobile">Last Name</label>
                                         </div>
                                         <div class="input-field col s6">
                                             <p><label for="Gender">Gender</label>
@@ -83,19 +82,19 @@
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="name" type="text" ng-model="formData.pan_card">
-                                            <label for="pan_card">PAN card</label>
+                                            <input id="name" type="text" placeholder="PAN card" ng-model="formData.pan_card">
+											<label for="mobile">PAN card</label>
                                         </div>
 
                                         <div class="input-field col s6">
-                                            <input id="personal_email" type="email" ng-model="formData.pers_email">
-                                            <label for="email">Email</label>
+                                            <input id="personal_email" type="email" placeholder="Email" ng-model="formData.pers_email">
+											<label for="mobile">Email</label>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="input-field col s6">
-                                            <input id="phone" type="number" ng-model="formData.pers_phone">
-                                            <label for="password">Phone no.</label>
+											<label for="mobile">Phone no.</label>
+                                            <input id="phone" type="number" placeholder="Phone no." ng-model="formData.pers_phone">
                                         </div>
                                         <div class="input-field col s6">
                                             <input id="mobile" type="number" ng-model="formData.pers_mobile">

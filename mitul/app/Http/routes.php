@@ -43,5 +43,6 @@ Route::group(['middleware' => 'auth.adminOnly'], function () {
     Route::post('savedata', 'Admin\ClientController@saveFormdata');
 
     Route::get('getBday', 'Admin\ClientController@getBday');
+    Route::post('EditData', 'Admin\ClientController@EditData');
 });
 
