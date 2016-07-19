@@ -136,7 +136,7 @@
                                 </div>
                                 <div class="col col s8 m8 l8">
                                     <ul id="profile-dropdown" class="dropdown-content">
-                                        <li><a href="#/profile"><i class="mdi-action-face-unlock"></i> Profile</a>
+                                        <li><a href="#/profile/pro/<?php echo $Authusers->id; ?>"><i class="mdi-action-face-unlock"></i> Profile</a>
                                         </li>
                                         <li><a href="logout"><i class="mdi-hardware-keyboard-tab"></i>Logout</a>
                                         </li>
@@ -168,7 +168,7 @@
                         </li>
                         <li class="bold"><a href="#/calendar" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calender</a>
                         </li>
-                                                                 
+
                         <li class="li-hover"><div class="divider"></div></li>
                         <li class="li-hover"><p class="ultra-small margin more-text">Todays B'Day</p></li>
                         <li class="li-hover">
@@ -189,9 +189,10 @@
 
                 <!-- START CONTENT -->
 
-                <div>
+                <!-- START CONTENT -->
+                <section id="content">   
                     <ng-view></ng-view>
-                </div>
+                </section>
                 <!-- END CONTENT -->
 
                 <!-- //////////////////////////////////////////////////////////////////////////// -->

@@ -31,12 +31,16 @@ class ClientController extends Controller {
     }
 
     public function getBday() {
-        $Reqdate = Carbon\Carbon::now()->format('Y-m-d');
+        $Reqdate = Carbon\Carbon::now()->month;
         $clientsBday = Client::Select('clients.*')
-                        ->where('clients.dob', '=', $Reqdate)
+//                        ->whereRaw('MONTH(clients.dob) = MONTH(NOW())')   //for months b'day
+                        ->whereDay('clients.dob', '=', date('d'))
+                        ->whereMonth('clients.dob', '=', date('m'))
                         ->get()->toArray();
         $clientsAnniver = Client::Select('clients.*')
-                        ->Where('clients.marriage_ani', '=', $Reqdate)
+//                        ->Where('clients.marriage_ani', '=', $Reqdate)
+                        ->whereDay('clients.marriage_ani', '=', date('d'))
+                        ->whereMonth('clients.marriage_ani', '=', date('m'))
                         ->get()->toArray();
         $clients['bdays'] = $clientsBday;
         $clients['anniver'] = $clientsAnniver;

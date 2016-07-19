@@ -1,230 +1,226 @@
-<section id="content">
-
-    <!--start container-->
-    <div class="container">
-        <!-- //////////////////////////////////////////////////////////////////////////// -->
-        <div id="card-widgets">
-            <div class="row">
-                <div class="col s12 m12 l6">
-                    <ul id="task-card" class="collection with-header">
-                        <li class="collection-header cyan">
-                            <h4 class="task-card-title">Today's Birth Date</h4>
-                            <p class="task-card-date">{[{dateToday | date:'MMMM dd, yyyy'}]}</p>
-                        </li>
-                        <li class="collection-item dismissable" ng-repeat="bday in bdays">
-                            <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> {[{bday.firstname}]}&nbsp;{[{ bday.lastname}]} &nbsp;
-                                <i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i>{[{bday.pers_mobile}]}&nbsp;
-                                <i class="mdi-communication-email cyan-text text-darken-2"></i>{[{bday.pers_email}]}
-                                <a href="#/view" class="secondary-content"><span class="ultra-small"><span class="task-cat teal">View</span></span></a></p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col s12 m12 l6">
-                    <ul id="task-card" class="collection with-header">
-                        <li class="collection-header cyan">
-                            <h4 class="task-card-title">Today's  Anniversary </h4>
-                            <p class="task-card-date">{[{dateToday | date:'MMMM dd, yyyy'}]}</p>
-                        </li>
-                        <li class="collection-item dismissable" ng-repeat="annivers in anniversary">
-                            <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> {[{annivers.firstname}]}&nbsp;{[{ annivers.lastname}]} &nbsp;
-                                <i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i>{[{annivers.pers_mobile}]} &nbsp;
-                                <i class="mdi-communication-email cyan-text text-darken-2"></i>{[{annivers.pers_email}]}
-                                <a href="#/view" class="secondary-content"><span class="ultra-small"><span class="task-cat teal">View</span></span></a></p>
-                        </li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-        <div class="collection-header cyan">
-            <h4 class="white-text" style="font-size: 25px;line-height: 45px;text-align: center">Clients Table</h4>
-        </div>
+<!--start container-->
+<div class="container">
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <div id="card-widgets">
         <div class="row">
-            <div class="col s12 m12 l12">
-                <div ui-grid="gridOptions" ui-grid-pagination ui-grid-selection ui-grid-exporter class="grid"></div>
-            </div>
-        </div>
-        <!--card stats start-->
-        <div id="card-stats">
-            <div class="row">
-                <div class="col s12 m6 l3">
-                    <div class="card">
-                        <div class="card-content  green white-text">
-                            <p class="card-stats-title"><i class="mdi-social-group-add"></i> Total Clients</p>
-                            <h4 class="card-stats-number">{[{totalClient}]}</h4>
-                            </p>
-                        </div>
-                        <div class="card-action  green darken-2">
-                            <div id="clients-bar" class="center-align"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l3">
-                    <div class="card">
-                        <div class="card-content pink lighten-1 white-text">
-                            <p class="card-stats-title"><i class="mdi-editor-insert-drive-file"></i> New Invoice</p>
-                            <h4 class="card-stats-number">1806</h4>
-                        </div>
-                        <div class="card-action  pink darken-2">
-                            <div id="invoice-line" class="center-align"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l3">
-                    <div class="card">
-                        <div class="card-content blue-grey white-text">
-                            <p class="card-stats-title"><i class="mdi-action-trending-up"></i> Today Profit</p>
-                            <h4 class="card-stats-number">$806.52</h4>
-                        </div>
-                        <div class="card-action blue-grey darken-2">
-                            <div id="profit-tristate" class="center-align"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6 l3">
-                    <div class="card">
-                        <div class="card-content purple white-text">
-                            <p class="card-stats-title"><i class="mdi-editor-attach-money"></i>Total Sales</p>
-                            <h4 class="card-stats-number">$8990.63</h4>
-                        </div>
-                        <div class="card-action purple darken-2">
-                            <div id="sales-compositebar" class="center-align"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--card stats end-->
-
-        <!-- //////////////////////////////////////////////////////////////////////////// -->
-
-        <!--card widgets start-->
-        <div id="card-widgets">
-            <div class="row">
-                <div class="col s12 m12 l4">
-                    <ul id="task-card" class="collection with-header">
-                        <li class="collection-header cyan">
-                            <h4 class="task-card-title">My Task</h4>
-                            <p class="task-card-date">March 26, 2015</p>
-                        </li>
-                        <li class="collection-item dismissable">
-                            <input type="checkbox" id="task1" />
-                            <label for="task1">Create Mobile App UI. <a href="#" class="secondary-content"><span class="ultra-small">Today</span></a>
-                            </label>
-                            <span class="task-cat teal">Mobile App</span>
-                        </li>
-                        <li class="collection-item dismissable">
-                            <input type="checkbox" id="task2" />
-                            <label for="task2">Check the new API standerds. <a href="#" class="secondary-content"><span class="ultra-small">Monday</span></a>
-                            </label>
-                            <span class="task-cat purple">Web API</span>
-                        </li>
-                        <li class="collection-item dismissable">
-                            <input type="checkbox" id="task3" checked="checked" />
-                            <label for="task3">Check the new Mockup of ABC. <a href="#" class="secondary-content"><span class="ultra-small">Wednesday</span></a>
-                            </label>
-                            <span class="task-cat pink">Mockup</span>
-                        </li>
-                        <li class="collection-item dismissable">
-                            <input type="checkbox" id="task4" checked="checked" disabled="disabled" />
-                            <label for="task4">I did it !</label>
-                            <span class="task-cat cyan">Mobile App</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col s12 m6 l4">
-                    <div id="flight-card" class="card">
-                        <div class="card-header amber darken-2">
-                            <div class="card-title">
-                                <h4 class="flight-card-title">Flight</h4>
-                                <p class="flight-card-date">June 18, Thu 04:50</p>
-                            </div>
-                        </div>
-                        <div class="card-content-bg white-text">
-                            <div class="card-content">
-                                <div class="row flight-state-wrapper">
-                                    <div class="col s5 m5 l5 center-align">
-                                        <div class="flight-state">
-                                            <h4 class="margin">LDN</h4>
-                                            <p class="ultra-small">London</p>
-                                        </div>
-                                    </div>
-                                    <div class="col s2 m2 l2 center-align">
-                                        <i class="mdi-device-airplanemode-on flight-icon"></i>
-                                    </div>
-                                    <div class="col s5 m5 l5 center-align">
-                                        <div class="flight-state">
-                                            <h4 class="margin">SFO</h4>
-                                            <p class="ultra-small">San Francisco</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col s6 m6 l6 center-align">
-                                        <div class="flight-info">
-                                            <p class="small"><span class="grey-text text-lighten-4">Depart:</span> 04.50</p>
-                                            <p class="small"><span class="grey-text text-lighten-4">Flight:</span> IB 5786</p>
-                                            <p class="small"><span class="grey-text text-lighten-4">Terminal:</span> B</p>
-                                        </div>
-                                    </div>
-                                    <div class="col s6 m6 l6 center-align flight-state-two">
-                                        <div class="flight-info">
-                                            <p class="small"><span class="grey-text text-lighten-4">Arrive:</span> 08.50</p>
-                                            <p class="small"><span class="grey-text text-lighten-4">Flight:</span> IB 5786</p>
-                                            <p class="small"><span class="grey-text text-lighten-4">Terminal:</span> C</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col s12 m6 l4">
-                    <div id="profile-card" class="card">
-                        <div class="card-image waves-effect waves-block waves-light">
-                            <img class="activator" src="images/user-bg.jpg" alt="user background">
-                        </div>
-                        <div class="card-content">
-                            <img src="images/avatar.jpg" alt="" class="circle responsive-img activator card-profile-image">
-                            <a class="btn-floating activator btn-move-up waves-effect waves-light darken-2 right">
-                                <i class="mdi-action-account-circle"></i>
-                            </a>
-
-                            <span class="card-title activator grey-text text-darken-4">Mitul Kanani</span>
-                            <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</p>
-                            <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> +91 9033680165</p>
-                            <p><i class="mdi-communication-email cyan-text text-darken-2"></i>kmitul1993@gmail.com</p>
-
-                        </div>
-                        <div class="card-reveal">
-                            <span class="card-title grey-text text-darken-4">Mitul Kanani<i class="mdi-navigation-close right"></i></span>
-                            <p>Here is some more information about this card.</p>
-                            <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</p>
-                            <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> +91 9033680165</p>
-                            <p><i class="mdi-communication-email cyan-text text-darken-2"></i>kmitul1993@gmail.com</p>
-                            <p><i class="mdi-social-cake cyan-text text-darken-2"></i> 7th December 1993</p>
-                            <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i>India</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Floating Action Button -->
-            <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
-                <a class="btn-floating btn-large">
-                    <i class="mdi-action-stars"></i>
-                </a>
-                <ul>
-                    <li><a href="css-helpers.html" class="btn-floating red"><i class="large mdi-communication-live-help"></i></a></li>
-                    <li><a href="app-widget.html" class="btn-floating yellow darken-1"><i class="large mdi-device-now-widgets"></i></a></li>
-                    <li><a href="app-calendar.html" class="btn-floating green"><i class="large mdi-editor-insert-invitation"></i></a></li>
-                    <li><a href="app-email.html" class="btn-floating blue"><i class="large mdi-communication-email"></i></a></li>
+            <div class="col s12 m12 l6">
+                <ul id="task-card" class="collection with-header">
+                    <li class="collection-header cyan">
+                        <h4 class="task-card-title">Today's Birth Date</h4>
+                        <p class="task-card-date">{[{dateToday | date:'MMMM dd, yyyy'}]}</p>
+                    </li>
+                    <li class="collection-item dismissable" ng-repeat="bday in bdays">
+                        <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> {[{bday.firstname}]}&nbsp;{[{ bday.lastname}]} &nbsp;
+                            <i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i>{[{bday.pers_mobile}]}&nbsp;
+                            <i class="mdi-communication-email cyan-text text-darken-2"></i>{[{bday.pers_email}]}
+                            <a href="#/view" class="secondary-content"><span class="ultra-small"><span class="task-cat teal">View</span></span></a></p>
+                    </li>
                 </ul>
             </div>
-            <!-- Floating Action Button -->
-        </div>
-        <!--end container-->
 
-</section>
+            <div class="col s12 m12 l6">
+                <ul id="task-card" class="collection with-header">
+                    <li class="collection-header cyan">
+                        <h4 class="task-card-title">Today's  Anniversary </h4>
+                        <p class="task-card-date">{[{dateToday | date:'MMMM dd, yyyy'}]}</p>
+                    </li>
+                    <li class="collection-item dismissable" ng-repeat="annivers in anniversary">
+                        <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> {[{annivers.firstname}]}&nbsp;{[{ annivers.lastname}]} &nbsp;
+                            <i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i>{[{annivers.pers_mobile}]} &nbsp;
+                            <i class="mdi-communication-email cyan-text text-darken-2"></i>{[{annivers.pers_email}]}
+                            <a href="#/view" class="secondary-content"><span class="ultra-small"><span class="task-cat teal">View</span></span></a></p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="collection-header cyan">
+        <h4 class="white-text" style="font-size: 25px;line-height: 45px;text-align: center">Clients Table</h4>
+    </div>
+    <div class="row">
+        <div class="col s12 m12 l12">
+            <div ui-grid="gridOptions" ui-grid-pagination ui-grid-selection ui-grid-exporter class="grid"></div>
+        </div>
+    </div>
+    <!--card stats start-->
+    <div id="card-stats">
+        <div class="row">
+            <div class="col s12 m6 l3">
+                <div class="card">
+                    <div class="card-content  green white-text">
+                        <p class="card-stats-title"><i class="mdi-social-group-add"></i> Total Clients</p>
+                        <h4 class="card-stats-number">{[{totalClient}]}</h4>
+                        </p>
+                    </div>
+                    <div class="card-action  green darken-2">
+                        <div id="clients-bar" class="center-align"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l3">
+                <div class="card">
+                    <div class="card-content pink lighten-1 white-text">
+                        <p class="card-stats-title"><i class="mdi-editor-insert-drive-file"></i> New Invoice</p>
+                        <h4 class="card-stats-number">1806</h4>
+                    </div>
+                    <div class="card-action  pink darken-2">
+                        <div id="invoice-line" class="center-align"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l3">
+                <div class="card">
+                    <div class="card-content blue-grey white-text">
+                        <p class="card-stats-title"><i class="mdi-action-trending-up"></i> Today Profit</p>
+                        <h4 class="card-stats-number">$806.52</h4>
+                    </div>
+                    <div class="card-action blue-grey darken-2">
+                        <div id="profit-tristate" class="center-align"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m6 l3">
+                <div class="card">
+                    <div class="card-content purple white-text">
+                        <p class="card-stats-title"><i class="mdi-editor-attach-money"></i>Total Sales</p>
+                        <h4 class="card-stats-number">$8990.63</h4>
+                    </div>
+                    <div class="card-action purple darken-2">
+                        <div id="sales-compositebar" class="center-align"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--card stats end-->
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+    <!--card widgets start-->
+    <div id="card-widgets">
+        <div class="row">
+            <div class="col s12 m12 l4">
+                <ul id="task-card" class="collection with-header">
+                    <li class="collection-header cyan">
+                        <h4 class="task-card-title">My Task</h4>
+                        <p class="task-card-date">March 26, 2015</p>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task1" />
+                        <label for="task1">Create Mobile App UI. <a href="#" class="secondary-content"><span class="ultra-small">Today</span></a>
+                        </label>
+                        <span class="task-cat teal">Mobile App</span>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task2" />
+                        <label for="task2">Check the new API standerds. <a href="#" class="secondary-content"><span class="ultra-small">Monday</span></a>
+                        </label>
+                        <span class="task-cat purple">Web API</span>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task3" checked="checked" />
+                        <label for="task3">Check the new Mockup of ABC. <a href="#" class="secondary-content"><span class="ultra-small">Wednesday</span></a>
+                        </label>
+                        <span class="task-cat pink">Mockup</span>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task4" checked="checked" disabled="disabled" />
+                        <label for="task4">I did it !</label>
+                        <span class="task-cat cyan">Mobile App</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div id="flight-card" class="card">
+                    <div class="card-header amber darken-2">
+                        <div class="card-title">
+                            <h4 class="flight-card-title">Flight</h4>
+                            <p class="flight-card-date">June 18, Thu 04:50</p>
+                        </div>
+                    </div>
+                    <div class="card-content-bg white-text">
+                        <div class="card-content">
+                            <div class="row flight-state-wrapper">
+                                <div class="col s5 m5 l5 center-align">
+                                    <div class="flight-state">
+                                        <h4 class="margin">LDN</h4>
+                                        <p class="ultra-small">London</p>
+                                    </div>
+                                </div>
+                                <div class="col s2 m2 l2 center-align">
+                                    <i class="mdi-device-airplanemode-on flight-icon"></i>
+                                </div>
+                                <div class="col s5 m5 l5 center-align">
+                                    <div class="flight-state">
+                                        <h4 class="margin">SFO</h4>
+                                        <p class="ultra-small">San Francisco</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col s6 m6 l6 center-align">
+                                    <div class="flight-info">
+                                        <p class="small"><span class="grey-text text-lighten-4">Depart:</span> 04.50</p>
+                                        <p class="small"><span class="grey-text text-lighten-4">Flight:</span> IB 5786</p>
+                                        <p class="small"><span class="grey-text text-lighten-4">Terminal:</span> B</p>
+                                    </div>
+                                </div>
+                                <div class="col s6 m6 l6 center-align flight-state-two">
+                                    <div class="flight-info">
+                                        <p class="small"><span class="grey-text text-lighten-4">Arrive:</span> 08.50</p>
+                                        <p class="small"><span class="grey-text text-lighten-4">Flight:</span> IB 5786</p>
+                                        <p class="small"><span class="grey-text text-lighten-4">Terminal:</span> C</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l4">
+                <div id="profile-card" class="card">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="images/user-bg.jpg" alt="user background">
+                    </div>
+                    <div class="card-content">
+                        <img src="images/avatar.jpg" alt="" class="circle responsive-img activator card-profile-image">
+                        <a class="btn-floating activator btn-move-up waves-effect waves-light darken-2 right">
+                            <i class="mdi-action-account-circle"></i>
+                        </a>
+
+                        <span class="card-title activator grey-text text-darken-4">Mitul Kanani</span>
+                        <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</p>
+                        <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> +91 9033680165</p>
+                        <p><i class="mdi-communication-email cyan-text text-darken-2"></i>kmitul1993@gmail.com</p>
+
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Mitul Kanani<i class="mdi-navigation-close right"></i></span>
+                        <p>Here is some more information about this card.</p>
+                        <p><i class="mdi-action-perm-identity cyan-text text-darken-2"></i> Project Manager</p>
+                        <p><i class="mdi-action-perm-phone-msg cyan-text text-darken-2"></i> +91 9033680165</p>
+                        <p><i class="mdi-communication-email cyan-text text-darken-2"></i>kmitul1993@gmail.com</p>
+                        <p><i class="mdi-social-cake cyan-text text-darken-2"></i> 7th December 1993</p>
+                        <p><i class="mdi-device-airplanemode-on cyan-text text-darken-2"></i>India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Floating Action Button -->
+        <div class="fixed-action-btn" style="bottom: 50px; right: 19px;">
+            <a class="btn-floating btn-large">
+                <i class="mdi-action-stars"></i>
+            </a>
+            <ul>
+                <li><a href="css-helpers.html" class="btn-floating red"><i class="large mdi-communication-live-help"></i></a></li>
+                <li><a href="app-widget.html" class="btn-floating yellow darken-1"><i class="large mdi-device-now-widgets"></i></a></li>
+                <li><a href="app-calendar.html" class="btn-floating green"><i class="large mdi-editor-insert-invitation"></i></a></li>
+                <li><a href="app-email.html" class="btn-floating blue"><i class="large mdi-communication-email"></i></a></li>
+            </ul>
+        </div>
+        <!-- Floating Action Button -->
+    </div>
+    <!--end container-->

@@ -14,6 +14,10 @@ app.config(['$routeProvider',
                     templateUrl: 'templates/clients.html',
                     controller: 'ItemController'
                 }).
+                when('/profile/:pro/:id', {
+                    templateUrl: 'templates/uprofile.html',
+                    controller: 'ItemController'
+                }).
                 otherwise('/', {
                     templateUrl: 'templates/home.html',
                     controller: 'ItemController'

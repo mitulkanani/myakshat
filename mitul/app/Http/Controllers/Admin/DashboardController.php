@@ -26,7 +26,6 @@ class DashboardController extends Controller {
 
     public function __construct() {
         $this->middleware('auth.adminOnly');
-        
     }
 
     /**
@@ -35,9 +34,9 @@ class DashboardController extends Controller {
      * @return Response
      */
     public function index() {
-        //$users = $this->userOBJ->getUserList();
+        $Authusers = Auth::User();
         //return view('admin.home', compact('users'));
-		return view('admindashboard');
+        return view('admindashboard', compact('Authusers'));
     }
 
     public function admin_cart_product() {
