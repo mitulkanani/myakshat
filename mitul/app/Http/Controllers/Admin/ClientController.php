@@ -17,6 +17,7 @@ use File;
 use Mail;
 use Hash;
 use Carbon;
+use DateTime;
 
 class ClientController extends Controller {
 
@@ -29,8 +30,15 @@ class ClientController extends Controller {
         $clients = Client::all();
         return response()->json($clients);
     }
-	public function EditData() {
+
+    public function EditData() {
         $client = Client::find(Input::get('clientId'));
+        return response()->json($client);
+    }
+
+    public function deleteData() {
+        $client = Client::find(Input::get('clientId'));
+        $client->delete();
         return response()->json($client);
     }
 
@@ -52,31 +60,60 @@ class ClientController extends Controller {
     }
 
     public function saveFormdata(Request $request) {
-        $client_data = new Client();
-        $client_data->firstname = Input::get('firstname');
-        $client_data->middlename = Input::get('middlename');
-        $client_data->lastname = Input::get('lastname');
-        $client_data->gender = Input::get('gender');
-        $client_data->dob = date('Y-m-d', strtotime(Input::get('dob')));
-        $client_data->marriage_ani = date('Y-m-d', strtotime(Input::get('marriage_ani')));
-        $client_data->pan_card = Input::get('pan_card');
-        $client_data->pers_email = Input::get('pers_email');
-        $client_data->pers_phone = Input::get('pers_phone');
-        $client_data->pers_mobile = Input::get('pers_mobile');
-        $client_data->bank_name = Input::get('bank_name');
-        $client_data->account_no = Input::get('account_no');
-        $client_data->bank_add = Input::get('bank_add');
-        $client_data->city = Input::get('city');
-        $client_data->ifci_code = Input::get('ifci_code');
-        $client_data->occupation = Input::get('occupation');
-        $client_data->occu_addr = Input::get('occu_addr');
-        $client_data->occu_phone = Input::get('occu_phone');
-        $client_data->occu_mobile = Input::get('occu_mobile');
-        $client_data->occu_email = Input::get('occu_email');
-        $client_data->occu_website = Input::get('occu_website');
-        $client_data->status = 1;
-        $client_data->save();
-        return response()->json($client_data);
+        $id = Input::get('id');
+        if ($id) {
+            $client_data = Client::find(Input::get('id'));
+            $client_data->firstname = Input::get('firstname');
+            $client_data->middlename = Input::get('middlename');
+            $client_data->lastname = Input::get('lastname');
+            $client_data->gender = Input::get('gender');
+            $client_data->dob = date('Y-m-d', strtotime(Input::get('dob')));
+            $client_data->marriage_ani = date('Y-m-d', strtotime(Input::get('marriage_ani')));
+            $client_data->pan_card = Input::get('pan_card');
+            $client_data->pers_email = Input::get('pers_email');
+            $client_data->pers_phone = Input::get('pers_phone');
+            $client_data->pers_mobile = Input::get('pers_mobile');
+            $client_data->bank_name = Input::get('bank_name');
+            $client_data->account_no = Input::get('account_no');
+            $client_data->bank_add = Input::get('bank_add');
+            $client_data->city = Input::get('city');
+            $client_data->ifci_code = Input::get('ifci_code');
+            $client_data->occupation = Input::get('occupation');
+            $client_data->occu_addr = Input::get('occu_addr');
+            $client_data->occu_phone = Input::get('occu_phone');
+            $client_data->occu_mobile = Input::get('occu_mobile');
+            $client_data->occu_email = Input::get('occu_email');
+            $client_data->occu_website = Input::get('occu_website');
+            $client_data->status = 1;
+            $client_data->save();
+            return response()->json($client_data);
+        } else {
+            $client_data = new Client();
+            $client_data->firstname = Input::get('firstname');
+            $client_data->middlename = Input::get('middlename');
+            $client_data->lastname = Input::get('lastname');
+            $client_data->gender = Input::get('gender');
+            $client_data->dob = date('Y-m-d', strtotime(Input::get('dob')));
+            $client_data->marriage_ani = date('Y-m-d', strtotime(Input::get('marriage_ani')));
+            $client_data->pan_card = Input::get('pan_card');
+            $client_data->pers_email = Input::get('pers_email');
+            $client_data->pers_phone = Input::get('pers_phone');
+            $client_data->pers_mobile = Input::get('pers_mobile');
+            $client_data->bank_name = Input::get('bank_name');
+            $client_data->account_no = Input::get('account_no');
+            $client_data->bank_add = Input::get('bank_add');
+            $client_data->city = Input::get('city');
+            $client_data->ifci_code = Input::get('ifci_code');
+            $client_data->occupation = Input::get('occupation');
+            $client_data->occu_addr = Input::get('occu_addr');
+            $client_data->occu_phone = Input::get('occu_phone');
+            $client_data->occu_mobile = Input::get('occu_mobile');
+            $client_data->occu_email = Input::get('occu_email');
+            $client_data->occu_website = Input::get('occu_website');
+            $client_data->status = 1;
+            $client_data->save();
+            return response()->json($client_data);
+        }
     }
 
 }

@@ -1,16 +1,16 @@
-app.controller('ItemController', function(saveFormdata, getBday, $scope, $http,$location,$routeParams, uiGridConstants,EditData) {
+app.controller('ItemController', function(saveFormdata, getBday, deleteData, $filter, $scope, $http, $location, $routeParams, uiGridConstants, EditData) {
 
     loadAPIData();
     /***   Get Todays B'day and anniversary  ***/
     function loadAPIData() {
         var Bdays = getBday.get({});
         Bdays.$promise.then(function(data) {
-			console.log(data)
+            console.log(data)
             $scope.bdays = data.bdays;
             $scope.anniversary = data.anniver;
         });
     }
-	$scope.dateToday = new Date();
+    $scope.dateToday = new Date();
     $scope.saveFormData = function(formData) {
         console.log(formData)
         var SaveFromData = saveFormdata.post(formData);
@@ -25,7 +25,6 @@ app.controller('ItemController', function(saveFormdata, getBday, $scope, $http,$
 
     $scope.edit = function(id) {
         saveFormdata.edit('items/' + id + '/edit').then(function(data) {
-            console.log(data);
             $scope.form = data;
         });
     }
@@ -51,23 +50,39 @@ app.controller('ItemController', function(saveFormdata, getBday, $scope, $http,$
     var paginationOptions = {
         sort: null
     };
-	if($routeParams.cliedit=="cliedit" && $routeParams.id !=""){
-		var data ={};
-		data.clientId=$routeParams.id;
-		var EditDatas = EditData.post(data);
-        EditDatas.$promise.then(function(result) {
-			console.log(result)
-            $scope.formData = result;
-        })
-	}
     $scope.edit = function(row) {
-		$location.path('/clients/cliedit/'+row.entity.id);
+        $location.path('/clients/cliedit/' + row.entity.id);
     };
+    if ($routeParams.cliedit == "cliedit" && $routeParams.id != "") {
+        var data = {};
+        data.clientId = $routeParams.id;
+        var EditDatas = EditData.post(data);
+        EditDatas.$promise.then(function(result) {
+            $scope.formData = result;
+            $scope.formData.dob = new Date($scope.formData.dob); // convert filed to date
+            $scope.formData.marriage_ani = new Date($scope.formData.marriage_ani); // convert filed to date
+        })
+    }
+
     $scope.view = function(row) {
-        console.log(row.entity.id);
+        $location.path('/profile/pro/' + row.entity.id);
     };
+    if ($routeParams.pro == "pro" && $routeParams.id != "") {
+        var data = {};
+        data.clientId = $routeParams.id;
+        var EditDatas = EditData.post(data);
+        EditDatas.$promise.then(function(result) {
+            $scope.formData = result;
+        });
+    }
+
     $scope.delete = function(row) {
-        console.log(row.entity.id);
+        var data = {};
+        data.clientId = row.entity.id;
+        var deleteDatas = deleteData.post(data);
+        deleteDatas.$promise.then(function(result) {
+            Materialize.toast('<span>Successfully Saved.</span>', 1500);
+        });
     };
     $scope.gridOptions = {
         paginationPageSizes: [25, 50, 75],
@@ -146,4 +161,12 @@ app.controller('ItemController', function(saveFormdata, getBday, $scope, $http,$
                 });
     };
     getPage(1, $scope.gridOptions.paginationPageSize);
+});
+
+app.filter('myDate', function($filter) {
+    alert('l')
+    var angularDateFilter = $filter('date');
+    return function(theDate) {
+        return angularDateFilter(theDate, 'Y-m-d');
+    }
 });

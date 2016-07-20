@@ -18,7 +18,7 @@ app.config(['$routeProvider',
                     templateUrl: 'templates/uprofile.html',
                     controller: 'ItemController'
                 })
-				.when('/clients/:cliedit/:id', {
+                .when('/clients/:cliedit/:id', {
                     templateUrl: 'templates/clients.html',
                     controller: 'ItemController'
                 }).

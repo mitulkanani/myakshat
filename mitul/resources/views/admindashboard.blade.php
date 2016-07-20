@@ -46,6 +46,9 @@
         <!--jsgrid css-->
         <link href="{{ asset('/js/plugins/data-tables/css/jquery.dataTables.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
         <style>
+            .grid {
+                height: 500px;
+            }
             .ui-grid-viewport{overflow-x: scroll;}
         </style>
     </head>

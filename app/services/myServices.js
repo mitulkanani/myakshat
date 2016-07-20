@@ -59,3 +59,20 @@ app.factory('EditData', function($resource) {
             }
     );
 });
+app.factory('deleteData', function($resource) {
+    return $resource(
+            "deleteData",
+            {},
+            {
+                "post": {
+                    method: 'POST',
+                    params: {},
+                    isArray: false,
+                    headers: {
+                        "Accept": "application/json",
+                        "Content-Type": "application/json"
+                    }
+                }
+            }
+    );
+});
