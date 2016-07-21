@@ -12,7 +12,6 @@ app.controller('ItemController', function(saveFormdata, getBday, deleteData, $fi
     }
     $scope.dateToday = new Date();
     $scope.saveFormData = function(formData) {
-        console.log(formData)
         var SaveFromData = saveFormdata.post(formData);
         SaveFromData.$promise.then(function(result) {
             $scope.devices = result;

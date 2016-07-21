@@ -382,13 +382,13 @@
 
         <!--Angular JS--> 
         <script src="{{ asset('/js/plugins/angular.min.js')}}"></script>  
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.min.js"></script>
+        <script src="{{ asset('/js/angular-route.min.js')}}"></script>
         <!-- ui-table -->
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-touch.js"></script>
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular-animate.js"></script>
-        <script src="http://ui-grid.info/docs/grunt-scripts/csv.js"></script>
-        <script src="http://ui-grid.info/docs/grunt-scripts/pdfmake.js"></script>
-        <script src="http://ui-grid.info/docs/grunt-scripts/vfs_fonts.js"></script>
+        <script src="{{ asset('/js/angular-touch.js')}}"></script>
+        <script src="{{ asset('/js/angular-animate.js')}}"></script>
+        <script src="{{ asset('/js/csv.js')}}"></script>
+        <script src="{{ asset('/js/pdfmake.js')}}"></script>
+        <script src="{{ asset('/js/vfs_fonts.js')}}"></script>
         <script src="{{ asset('/js/ui-grid.js')}}"></script>
 
 
