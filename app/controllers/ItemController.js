@@ -1,4 +1,4 @@
-app.controller('ItemController', function(saveFormdata, getBday, deleteData, $filter, $scope, $http, $location, $routeParams, uiGridConstants, EditData) {
+app.controller('ItemController', function(saveFormdata, Upload, getBday, deleteData, $filter, $scope, $http, $location, $routeParams, uiGridConstants, EditData) {
 
     loadAPIData();
     /***   Get Todays B'day and anniversary  ***/
@@ -12,8 +12,25 @@ app.controller('ItemController', function(saveFormdata, getBday, deleteData, $fi
     }
     $scope.dateToday = new Date();
     $scope.saveFormData = function(formData) {
+        console.log(formData)
         var SaveFromData = saveFormdata.post(formData);
         SaveFromData.$promise.then(function(result) {
+            Upload.upload({
+                url: 'image',
+                data: {
+                    file: formData.ClientPic,
+                    object_id: result.id,
+                    type: "clientPic"
+                }
+            })
+            Upload.upload({
+                url: 'image',
+                data: {
+                    file: formData.DocumentPic,
+                    object_id: result.id,
+                    type: "docuPic"
+                }
+            })
             $scope.devices = result;
             $scope.successMsg = "Saved";
             Materialize.toast('<span>Successfully Saved.</span>', 1500);

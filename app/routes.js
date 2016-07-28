@@ -1,4 +1,4 @@
-var app = angular.module('main-App', ['ngRoute', 'ngResource', 'ngAnimate', 'ngTouch', 'ui.grid', 'ui.grid.pagination', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.moveColumns']);
+var app = angular.module('main-App', ['ngRoute', 'ngFileUpload','ngResource', 'ngAnimate', 'ngTouch', 'ui.grid', 'ui.grid.pagination', 'ui.grid.selection', 'ui.grid.exporter', 'ui.grid.moveColumns']);
 app.config(function($interpolateProvider) {
     $interpolateProvider.startSymbol('{[{');
     $interpolateProvider.endSymbol('}]}');

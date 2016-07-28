@@ -45,6 +45,7 @@
                                             <label for="mobile" class="{[{formData.middlename.length > '0'?'active':''}]}">Middle Name</label>
                                         </div>
                                     </div>
+
                                     <div class="row">
                                         <div class="input-field col s6">
                                             <input id="name" type="text" placeholder="Last Name" ng-model="formData.lastname">
@@ -53,15 +54,14 @@
                                         <div class="input-field col s6">
                                             <p><label for="Gender">Gender</label>
                                             <p>
-                                                <input class="with-gap" name="gender" type="radio" ng-value="Male" id="Male" />
-                                                <label for="test3">Male</label>
+                                                <input class="with-gap" name="gender" type="radio" value="Male" id="Male" ng-model="formData.gender"/>
+                                                <label for="Male">Male</label>
 
-                                                <input class="with-gap" name="gender" type="radio" ng-value="Female" id="Female" />
+                                                <input class="with-gap" name="gender" type="radio" value="Female" id="Female" ng-model="formData.gender"/>
                                                 <label for="Female">Female</label>
                                             </p>
                                         </div>
                                     </div>
-
 
                                     <div class="row">
                                         <div class="input-field col s6">
@@ -95,7 +95,19 @@
                                             <label for="mobile" class="{[{formData.pers_mobile > '0'?'active':''}]}" >Mobile no.</label>
                                         </div>
                                     </div>
-
+                                    <div class="col s12 m8 l9">
+                                        <form action="#">
+                                            <div class="file-field input-field">
+                                                <div class="btn">
+                                                    <span>Client's Image</span>
+                                                    <input type="file"  ngf-select ng-model="formData.ClientPic">
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input  class="file-path validate valid" type="text" placeholder="Upload one or more files">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </form>
                             </div>
                         </div>
@@ -136,11 +148,22 @@
                                             <label for="ifci_code" class="{[{formData.ifci_code.length > '0'?'active':''}]}">IFCI Code</label>
                                         </div>
                                     </div>
+                                    <div class="col s12 m8 l9">
+                                        <form action="#">
+                                            <div class="file-field input-field">
+                                                <div class="btn">
+                                                    <span>Bank Documents</span>
+                                                    <input type="file" multiple="" ngf-select ng-model="formData.DocumentPic">
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                    <input  class="file-path validate valid" type="text" placeholder="Upload one or more, all kind of documents or files">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
                                 </form>
                             </div>
                         </div>
-
-
                     </div>
 
                 </div>
@@ -190,6 +213,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
             <!-- Form with icon prefixes -->
         </div>

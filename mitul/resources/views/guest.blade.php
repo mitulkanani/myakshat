@@ -19,13 +19,8 @@
   <title>Login Page | Akshat</title>
 
   <!-- Favicons-->
-  <link rel="icon" href="images/favicon/favicon-32x32.png" sizes="32x32">
-  <!-- Favicons-->
-  <link rel="apple-touch-icon-precomposed" href="images/favicon/apple-touch-icon-152x152.png">
-  <!-- For iPhone -->
-  <meta name="msapplication-TileColor" content="#00bcd4">
-  <meta name="msapplication-TileImage" content="images/favicon/mstile-144x144.png">
-  <!-- For Windows Phone -->
+  <link rel="icon" href="images/favicon/favicon.png" sizes="32x32">
+ 
 
 
   <!-- CORE CSS-->
@@ -77,6 +72,4 @@
 
 </body>
 
-
-<!-- Mirrored from demo.geekslabs.com/materialize/v3.1/user-login.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 15 Jul 2016 13:41:08 GMT -->
 </html>

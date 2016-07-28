@@ -45,5 +45,6 @@ Route::group(['middleware' => 'auth.adminOnly'], function () {
     Route::get('getBday', 'Admin\ClientController@getBday');
     Route::post('EditData', 'Admin\ClientController@EditData');
     Route::post('deleteData', 'Admin\ClientController@deleteData');
+     Route::resource('image', 'ImageController');
 });
 

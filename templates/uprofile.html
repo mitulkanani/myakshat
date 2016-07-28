@@ -1,15 +1,36 @@
      
+<style>
+    @media screen {
+        #printSection {
+            display: none;
+        }
+    }
 
+    @media print {
+        body * {
+            visibility:hidden;
+        }
+        #printSection, #printSection * {
+            visibility:visible;
+        }
+        #printSection {
+            position:absolute;
+            left:0;
+            top:0;
+        }
+    }
+</style>
 <!--start container-->
 <div class="container">
-    <div id="profile-page" class="section">
+    <button id="btnPrint">Print</button>
+    <div id="profile-page" class="section" >
         <!-- profile-page-header -->
         <div id="profile-page-header" class="card">
             <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="images/user-profile-bg.jpg" alt="user background">                    
             </div>
             <figure class="card-profile-image">
-                <img src="images/avatar.jpg" alt="profile image" class="circle z-depth-2 responsive-img activator">
+                <img src="mitul/storage/uploads/{[{formData.client_img}]}" alt="profile image" class="circle z-depth-2 responsive-img activator">
             </figure>
             <div class="card-content">
                 <div class="row">                    
@@ -117,82 +138,40 @@
                         </li>
                     </ul>
                 </div>
-                <!--/ Profile About Details  -->
-
-                <!-- Profile feed  -->
-                <div  class="col s12 m4">
-                    <ul id="profile-page-about-feed" class="collection z-depth-1">
-                        <li class="collection-item avatar">
-                            <img src="images/avatar.jpg" alt="" class="circle">
-                            <span class="title">Project Title</span>
-                            <p>Task assigned to new changes.
-                                <br> <span class="ultra-small">Second Line</span>
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="mdi-action-grade"></i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="mdi-file-folder circle"></i>
-                            <span class="title">New Project</span>
-                            <p>First Line of Project Work 
-                                <br> <span class="ultra-small">Second Line</span>
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="mdi-social-domain"></i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="mdi-action-assessment circle green"></i>
-                            <span class="title">New Payment</span>
-                            <p>Last UK Project Payment
-                                <br> <span class="ultra-small">$ 3,684.00</span>
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="mdi-editor-attach-money"></i></a>
-                        </li>
-                        <li class="collection-item avatar">
-                            <i class="mdi-av-play-arrow circle red"></i>
-                            <span class="title">Latest News</span>
-                            <p>company management news
-                                <br> <span class="ultra-small">Second Line</span>
-                            </p>
-                            <a href="#!" class="secondary-content"><i class="mdi-action-track-changes"></i></a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- Profile feed  -->
-
-                <!-- task-card -->
-                <div  class="col s12 m4">
-                    <ul id="task-card" class="collection with-header">
-                        <li class="collection-header cyan">
-                            <h4 class="task-card-title">My Task</h4>
-                            <p class="task-card-date">March 26, 2015</p>
-                        </li>
-                        <li class="collection-item dismissable">
-                            <input type="checkbox" id="task1" />
-                            <label for="task1">Create Mobile App UI. <a href="#" class="secondary-content"><span class="ultra-small">Today</span></a>
-                            </label>
-                            <span class="task-cat teal">Mobile App</span>
-                        </li>
-                        <li class="collection-item dismissable">
-                            <input type="checkbox" id="task2" />
-                            <label for="task2">Check the new API standerds. <a href="#" class="secondary-content"><span class="ultra-small">Monday</span></a>
-                            </label>
-                            <span class="task-cat purple">Web API</span>
-                        </li>
-                        <li class="collection-item dismissable">
-                            <input type="checkbox" id="task3" checked="checked" />
-                            <label for="task3">Check the new Mockup of ABC. <a href="#" class="secondary-content"><span class="ultra-small">Wednesday</span></a>
-                            </label>
-                            <span class="task-cat pink">Mockup</span>
-                        </li>
-                        <li class="collection-item dismissable">
-                            <input type="checkbox" id="task4" checked="checked" disabled="disabled" />
-                            <label for="task4">I did it !</label>
-                            <span class="task-cat cyan">Mobile App</span>
-                        </li>
-                    </ul>
-                </div>
-                <!-- task-card -->
             </div>
         </div>
+        <!-- Document Images -->
+        <div class="col s12 m12">
+            <h4 class="card-stats-number">Client Documents</h4>
+            <div ng-repeat="DocImg in formData.docu_img.split(',')" style="width: 100px;height: 100px;display: inline-block;margin-right: 16px;" >
+                <a href="mitul/storage/uploads/{[{DocImg}]}" title="Documents">
+                    <img src="mitul/storage/uploads/{[{DocImg}]}" style="width: 100px;height: 100px;" >
+                </a>
+            </div>
+        </div>
+        <!-- Document Images -->
     </div>
 </div>
+<script>
+    document.getElementById("btnPrint").onclick = function() {
+        printElement(document.getElementById("profile-page"));
+//        var modThis = document.querySelector("#printSection .modifyMe");
+//        modThis.appendChild(document.createTextNode(" new"));
+        window.print();
+    }
+    function printElement(elem) {
+        var domClone = elem.cloneNode(true);
+        var $printSection = document.getElementById("printSection");
+
+        if (!$printSection) {
+            var $printSection = document.createElement("div");
+            $printSection.id = "printSection";
+            document.body.appendChild($printSection);
+        }
+        $printSection.innerHTML = "";
+        $printSection.appendChild(domClone);
+    }
+</script>
+
+
 <!--end container-->

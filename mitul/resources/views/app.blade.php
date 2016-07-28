@@ -18,14 +18,7 @@
         <title>Akshat</title>
 
         <!-- Favicons-->
-        <link rel="icon" href="{{ asset('/images/favicon/favicon-32x32.png')}}" sizes="32x32">
-        <!-- Favicons-->
-        <link rel="apple-touch-icon-precomposed" href="{{ asset('/images/favicon/apple-touch-icon-152x152.png')}}">
-        <!-- For iPhone -->
-        <meta name="msapplication-TileColor" content="#00bcd4">
-        <meta name="msapplication-TileImage" content="{{ asset('/images/favicon/mstile-144x144.png')}}">
-        <!-- For Windows Phone -->
-
+        <link rel="icon" href="{{ asset('/images/favicon/favicon.png')}}" sizes="32x32">
 
         <!-- CORE CSS-->    
         <link href="{{ asset('/css/materialize.min.css')}}" type="text/css" rel="stylesheet" media="screen,projection">
@@ -168,7 +161,7 @@
                         </li>
                         <li class="bold"><a href="app-calendar.html" class="waves-effect waves-cyan"><i class="mdi-editor-insert-invitation"></i> Calender</a>
                         </li>
-                                                                 
+
                         <li class="li-hover"><div class="divider"></div></li>
                         <li class="li-hover"><p class="ultra-small margin more-text">Todays B'Day</p></li>
                         <li class="li-hover">
@@ -344,21 +337,6 @@
 
         <!-- START FOOTER -->
         <footer class="page-footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">World Map</h5>
-                        <div id="world-map-markers"></div>
-                    </div>
-                    <div class="col l4 offset-l2 s12">
-                        <h5 class="white-text">Akshat</h5>
-                        <p class="grey-text text-lighten-4">One Stop Solution.</p>
-                        <div id="polar-chart-holder">
-                            <canvas id="polar-chart-country" width="200"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="footer-copyright">
                 <div class="container">
                     Copyright © 2016 <a class="grey-text text-lighten-4" href="http://Akshat.com" target="_blank">Akshat</a> All rights reserved.
@@ -436,64 +414,7 @@
         <!--App Controller--> 
         <script src="{{ asset('/app/controllers/ItemController.js')}}"></script>
         <script src="{{ asset('/app/controllers/AdminController.js')}}"></script>
-        <!-- Toast Notification -->
 
-        <script type="text/javascript">
-            // Toast Notification
-            $(function() {
-                // Google Maps  
-                $('#map-canvas').addClass('loading');
-                var latlng = new google.maps.LatLng(40.6700, -73.9400); // Set your Lat. Log. New York
-                var settings = {
-                    zoom: 10,
-                    center: latlng,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    mapTypeControl: false,
-                    scrollwheel: false,
-                    draggable: true,
-                    styles: [{"featureType": "landscape.natural", "elementType": "geometry.fill", "stylers": [{"visibility": "on"}, {"color": "#e0efef"}]}, {"featureType": "poi", "elementType": "geometry.fill", "stylers": [{"visibility": "on"}, {"hue": "#1900ff"}, {"color": "#c0e8e8"}]}, {"featureType": "road", "elementType": "geometry", "stylers": [{"lightness": 100}, {"visibility": "simplified"}]}, {"featureType": "road", "elementType": "labels", "stylers": [{"visibility": "off"}]}, {"featureType": "transit.line", "elementType": "geometry", "stylers": [{"visibility": "on"}, {"lightness": 700}]}, {"featureType": "water", "elementType": "all", "stylers": [{"color": "#7dcdcd"}]}],
-                    mapTypeControlOptions: {style: google.maps.MapTypeControlStyle.DROPDOWN_MENU},
-                    navigationControl: false,
-                    navigationControlOptions: {style: google.maps.NavigationControlStyle.SMALL},
-                };
-                var map = new google.maps.Map(document.getElementById("map-canvas"), settings);
-
-                google.maps.event.addDomListener(window, "resize", function() {
-                    var center = map.getCenter();
-                    google.maps.event.trigger(map, "resize");
-                    map.setCenter(center);
-                    $('#map-canvas').removeClass('loading');
-                });
-
-                var contentString =
-                        '<div id="info-window">' +
-                        '<p>18 McLuice Road, Vellyon Hills,<br /> New York, NY 10010<br /><a href="https://plus.google.com/102896039836143247306/about?gl=za&hl=en" target="_blank">Get directions</a></p>' +
-                        '</div>';
-                var infowindow = new google.maps.InfoWindow({
-                    content: contentString
-                });
-
-                var companyImage = new google.maps.MarkerImage('images/map-marker.png',
-                        new google.maps.Size(36, 62), // Width and height of the marker
-                        new google.maps.Point(0, 0),
-                        new google.maps.Point(18, 52)// Position of the marker 
-                        );
-
-                var companyPos = new google.maps.LatLng(40.6700, -73.9400);
-
-                var companyMarker = new google.maps.Marker({
-                    position: companyPos,
-                    map: map,
-                    icon: companyImage,
-                    title: "Shapeshift Interactive",
-                    zIndex: 3});
-
-                google.maps.event.addListener(companyMarker, 'click', function() {
-                    infowindow.open(map, companyMarker);
-                    pageView('http://demo.geekslabs.com/#address');
-                });
-            });
-        </script>
     </body>
 </html>
 
