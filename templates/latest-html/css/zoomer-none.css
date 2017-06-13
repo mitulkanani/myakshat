@@ -1,0 +1,44 @@
+@charset "utf-8";
+
+.middle-img-block {width: 100%;  text-align: center;  position: fixed; top:0; bottom: 0; left:0; right: 0;  z-index: -1; }
+.middle-img-block img { height: 100%;  max-height: 100%;  display: inline-block; }
+.middle-img-block {background:url(../images/loader.gif) no-repeat center center fixed; }
+
+
+/* IOS OlD version 8.4.1 o issue */
+@media (min-width:992px) and (max-width:1024px){
+	.middle-img-block img {
+		display: inline-block;
+		height: inherit;
+		max-height:inherit;
+		width: 56%;
+	}
+}
+
+
+@media (min-width:768px) and (max-width:991px){
+	.middle-img-block img {
+		display: inline-block;
+		height: inherit;
+		max-height:inherit;
+		width: 80%;
+	}
+}
+
+@media (max-width: 991px){
+	.landscape-view .middle-img-block  {margin:0;} 
+	.middle-img-block { margin:  75px 0 135px; }
+}
+
+@media (max-width: 767px){
+	.middle-img-block { margin: 30px 0 150px; } 
+	.middle-img-block img {padding: 0;}
+	.landscape-view  .middle-img-block { margin: 0; } 
+	.landscape-view  .middle-img-block img { padding: 35px -10% 0; top:15px; position: relative;} 
+
+}
+
+
+@media (max-width: 480px){
+	.landscape-view .middle-img-block  {margin:25px 0 0;}
+}

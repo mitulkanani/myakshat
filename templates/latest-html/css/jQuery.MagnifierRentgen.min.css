@@ -1,0 +1,64 @@
+
+.wrap {
+	max-width: 480px;
+	margin: 80px auto;
+	padding: 10px 20px;
+	position: relative;
+}
+
+.magnifier-loupe img { display: inline-block;}
+
+.middle-img-block {max-width: 39%;}
+
+.magnifierRentgen{
+	box-sizing:border-box;
+	/* overflow:hidden;
+	position:relative; */
+	width:100%; max-width: 39%; margin: 0 auto;
+}
+.renderedImage {max-height: 100%;}
+
+
+.data-image { max-height: 100%; width: auto !important; }
+.magnifierRentgen .magnifier-loupe{
+	overflow:hidden;
+	position:absolute;
+	border-radius:10em;
+	top:0;
+	left:0;
+	border:#f0f0f0 4px solid;
+	box-shadow:rgba(0,0,0,0.3) 5px 5px 8px;
+	cursor:none;
+	-webkit-transform:scale(1.4);
+	-ms-transform:scale(1.4);
+	transform:scale(1.4);
+	display:none; background: #fff;
+}
+
+
+
+@media (max-width:1199px){
+	.middle-img-block {max-width: 100%; top: 0; position: absolute; bottom: inherit;}
+	.middle-img-block img {padding: 0 0 0;}
+	.wrap { left: -9%; margin-top: -30px; max-width: 70%; }
+	.portrait-view .wrap {left: 0;} 
+
+}
+
+@media (max-width:991px){
+	.middle-img-block {max-width: 100%;}
+	.wrap { max-width: 80%; }
+
+
+}
+
+@media (max-width:767px){
+	.landscape-view .middle-img-block {	max-width:62%;}
+	.portrait-view .middle-img-block {	max-width: 100%;}
+	.portrait-view .wrap { max-width: 100%; }
+	.img-control { z-index: 1 }
+
+}
+@media (max-height:480px){
+	.portrait-view .wrap {max-width: 83%;}
+}

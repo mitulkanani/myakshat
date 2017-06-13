@@ -1,0 +1,30 @@
+.livechat_button.hidden-xs {position: fixed; right: 0; bottom: 0; z-index: 20}
+.livechat_button.visible-xs {position: fixed; right: -10px; top: 9%; z-index: 20;}
+#livechat-compact-container {display: none !important;}
+.livechat_button a {display: block;}
+
+
+@media (max-width: 991px){
+	.livechat_button.visible-xs {display: block !important; top:30%;}
+	.livechat_button.hidden-xs {display: none !important; top:30%;}
+
+	.home-page .livechat_button.visible-xs {display: block !important; top:20%;}
+}
+
+@media (max-width: 767px){
+	.livechat_button.visible-xs {top:40%;}
+}
+
+@media (max-width: 414px){
+	.livechat_button.visible-xs {top:8%;}
+	.home-page .livechat_button.visible-xs {top:20%;}
+}
+
+@media (max-width: 320px){
+	.home-page .livechat_button.visible-xs {top:26%;}
+}
+
+@media only screen 
+and (orientation: landscape) { 
+	.livechat_button.visible-xs {display: none !important;}
+}

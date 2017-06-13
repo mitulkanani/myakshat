@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Tailors Mark</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/main.js"></script>	
+</head>
+
+<body class="checkout-body">
+	<div class="wrapper inner-page checkout-wrapper">
+		<!-- Start Contant -->
+		<div class="main-wrap clearfix">
+			<div class="container checkout-page">
+
+				<!-- Start Header -->
+				<header class="header innerpage-header">
+					<div class="row">
+						<div class="col-sm-4 col-xs-4">
+							<a href="#" title="Tailors Mark" class="logo">
+								<img src="images/logo.svg" alt="Tailors Mark">
+							</a>
+						</div>
+						<div class="col-sm-8 col-xs-8">
+							<div class="user-menu hidden">
+								<div class="cart-link">
+									$339 (2)
+								</div>
+								<div class="login-link">
+									<a href="#" title="Login">Login</a>
+								</div>
+							</div>
+							<ul class="header-links  navigation clearfix">
+								<li>
+									<div class="lang-selection">
+										<a href="#" title="Cart">EN $</a>
+										<div class="dropdown-menu">
+											<div class="drop-menu-inner">
+												<h3>Language</h3>
+												<ul class="clearfix ">
+													<li class="active"><a href="#" title="English">English</a></li>
+													<li><a href="#" title="German">German</a></li>
+												</ul>
+												<h3 class="line">Currency</h3>
+												<ul class="clearfix currency-drop">
+													<li><a href="#" title="£ GBP">£ GBP</a></li>
+													<li class="active"><a href="#" title="€ EUR">€ EUR</a></li>
+													<li><a href="#" title="$ USD">$ USD</a></li>
+													<li><a href="#" title="$ CAD">$ CAD</a></li>
+													<li><a href="#" title="£ JPY">£ JPY</a></li>
+													<li><a href="#" title="$ AUD">$ AUD</a></li>
+													<li><a href="#" title="$ NZD">$ NZD</a></li>
+													<li><a href="#" title="kr SEK">kr SEK</a></li>
+													<li><a href="#" title="kr NOK">kr NOK</a></li>
+													<li><a href="#" title="kr DKK">kr DKK</a></li>
+												</ul>
+
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="cart-section">
+									<a href="#" class="cart-link" title="Cart">$0.00 (0)</a>
+
+								</li>
+								<li>
+									<div class="login-link">
+										<a href="#login-modal" class="user-text" title="Alessandro">DAVID</a>
+										<div class="dropdown-menu alessandro">
+											<div class="drop-menu-inner">
+												<ul class="clearfix">
+													<li><a href="#" title="My Account">My Account</a></li>
+													<li><a href="#" title="Order history">Order history</a></li>
+													<li><a href="#" title="My Measurements">My Measurements</a></li>
+													<li><a href="#" title="Saved Designs">Saved Designs</a></li>
+													<li><a href="#" title="Support">Support</a></li>
+													<li class="line"><a href="#" title="Sign out">Sign out</a></li>
+												</ul>
+											</div>
+										</div>
+										<a href="#login-modal" data-toggle="modal" title="Login" class="logout-link">Login</a>
+									</div>
+								</li>
+
+
+							</ul>
+						</div>
+					</div>
+				</header>
+				<!-- End Header -->
+				
+				<div class="row">
+					<div class="col-md-7">
+						<div class="row">
+							<div class="col-sm-9 top-left clearfix secure-checkout-title">
+								<h1 class="clearfix"><i class="lock-icon"><img src="images/secure-lock.svg" alt=""></i><span class="secure-checkout-text">SECURE CHECKOUT</span></h1>
+								<ul class="top-content visible-xs">
+									<li>
+										<span>
+											<a href="#" title="Login here">
+												Login
+											</a>
+										</span>
+									</li>
+								</ul>
+							</div>
+							<div class="col-sm-3 top-right clearfix visible-xs hidden-xs">
+								<ul class="top-content ">
+									<li>
+										<span>Already a member?
+											<a href="#login-modal" title="Login here" data-toggle="modal">
+												Login here
+											</a>
+										</span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- End Header -->
+				<div class="row">
+					<div class="col-sm-7">
+						<div class="left-block">
+							<div class="form-block">
+								<h3>Shipping Address</h3>
+								
+
+								<form class="form-horizontal">
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-3 label-col">
+												<label>
+													Your Name
+												</label>
+											</div>
+											<div class="col-sm-9  right-form-block">
+												<input type="text" placeholder="Your Name" class="form-control" id="inputText">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-3 label-col">
+												<label>Address</label>
+											</div>
+											<div class="col-sm-9  right-form-block">
+												<input type="text" class="form-control" placeholder="Address">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-3 label-col">
+												<label>Town / City</label>
+											</div>
+											<div class="col-sm-9  right-form-block">
+												<input type="text" class="form-control" placeholder="Town / City">
+												<label class="error">Please enter a valid postcode</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-3 label-col">
+												<label>State / Territory</label>
+											</div>
+											<div class="col-sm-9 right-form-block error-msg ">
+												<div class="custom-dropdown hidden-xs">
+													<select data-type="custom-dropdown">
+														<option class="hidden-option">&nbsp;</option>
+														<option>Western Australia</option>
+														<option>Northern Territory</option>
+														<option>South Australia</option>
+														<option>Queensland</option>
+														<option>New South Wales</option>
+														<option>Victoria</option>
+													</select>
+												</div>
+												<div class="custom-dropdown visible-xs">
+													<div class="dk-selected">
+														<a href="#state-modal" id="stateText" data-toggle="modal" class="state-text">State / Territory</a>
+													</div>
+												</div>
+												<label class="error">Please enter a valid postcode</label>
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-3 label-col">
+												<label>Postcode</label>
+											</div>
+											<div class="col-sm-9  right-form-block">
+												<input type="number" class="form-control error" placeholder="Post code">
+												<label class="error">Please enter a valid postcode</label>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+
+							<div class="form-block shipping-add-block">
+								<h3>Shipping Address</h3>
+								<div class="payment-tab shipping-tab">
+									<div class="ship-radio-block">
+										<ul>
+											<li class="active">
+												<label class="radio-outer">
+													<input  id="radioShipToC" value="c" type="radio" name="iCheck" class="icheck shipto" checked>  <span>Ship to me</span>
+												</label>
+											</li>
+											<li >
+												<label class="radio-outer">
+													<input id="radioShipToSC" value="sc" type="radio" name="iCheck" class="icheck shipto"> <span>Ship to my Style Consultant (Rob Fisher)</span>
+												</label>
+											</li>
+										</ul>
+									</div>
+
+									<div id="customer_addresses" class="shipping-address">
+										<div class="shipping-options">
+											<h5>Select shipping address</h5>
+											<ul>
+												<li><a href="#" title="Delete">Delete</a></li>
+												<li><a href="#" title="Edit">Edit</a></li>
+												<li><a href="#" title="New">New</a></li>
+											</ul>
+										</div>
+										<form class="form-horizontal">
+											<div class="form-group">
+												<div class="custom-dropdown">
+													<select data-type="custom-dropdown">
+														<option class="hidden-option">&nbsp;</option>
+														<option>Alessandro Fuoco Via Bastone 143</option>
+														<option>Northern Territory</option>
+														<option>South Australia</option>	
+													</select>
+												</div>
+											</div>
+										</form>
+										
+									</div>
+
+									
+								</div>
+							</div>
+							<div class="form-block ">
+								<h3>Payment Method</h3>
+								<div class="payment-tab">
+									<!-- Nav tabs -->
+									<ul class="nav nav-tabs" role="tablist">
+										<li role="presentation" class="active mastercard-item">
+											<a href="#payment-credit" aria-controls="payment-credit" role="tab" data-toggle="tab">
+												<span class="radio-btn"></span> Credit Card
+												<span class="master-card-img"><img src="images/mastercard.png" alt="Master Card" class="img-responsive"></span>
+											</a>
+										</li>
+										<li role="presentation" class="">
+											<a href="#payment-time" aria-controls="payment-time" role="tab" data-toggle="tab">
+												<span class="radio-btn"></span> Pay Over time
+												<span class="master-card-img card-img"><img src="images/afterpay.svg" alt="Master Card"></span>
+												<p class="not-avil-text">Sorry, Afterpay is available only with purchases below $1000.</p>
+											</a>
+											
+											<div class="tooltip-block-outer">
+												<a href="#" class="add-btn tooltip-hover info-icon"><img src="images/info_icon_bg.svg" alt=""></a>
+												<div class="tooltip-block">
+													<a href="#" class="close-icon"><img src="images/cross-img.png" alt=""></a>
+													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum consequuntur, enim quaerat delectus rerum, sunt ut nulla similique excepturi animi.</p>
+												</div> 
+											</div>
+										</li>
+										<li role="presentation" class="paypal-item">
+											<a href="#paypal-express" aria-controls="paypal-express" role="tab" data-toggle="tab">
+												<span class="radio-btn"></span> PayPal Express
+												<span class="master-card-img card-img"><img src="images/paypal.png" alt="Master Card" class="img-responsive"></span>
+											</a>
+										</li>
+									</ul>
+									<!-- Tab panes -->
+									<div class="tab-content">
+										<div role="tabpanel" class="tab-pane active" id="payment-credit">
+											<h5>Credit Card Details</h5>
+											<form class="form-horizontal">
+												<div class="form-group">
+													<div class="row">
+														<div class="col-sm-3 label-col">
+															<label>Card Owner</label>
+														</div>
+														<div class="col-sm-9 right-form-block">
+															<input type="text" class="form-control" placeholder="Card Owner">
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<div class="row">
+														<div class="col-sm-3 label-col">
+															<label>Card Number</label>
+														</div>
+														<div class="col-sm-9   right-form-block">
+															<input type="number" class="form-control input-focus" placeholder="Card Number">
+														</div>
+													</div>
+												</div>
+												<div class="form-group dd-menu">
+													<div class="row">
+														<div class="col-sm-3 label-col">
+															<label>Card Expiry Date</label>
+														</div>
+														<div class="col-sm-9  right-form-block">
+															<div class="row">
+																<div class="col-sm-6 col-xs-6 error-msg">
+																	<div class="custom-dropdown hidden-xs">
+																		<select data-type="custom-dropdown">
+																			<option class="hidden-option">&nbsp;</option>
+																			<option>1</option>
+																			<option>2</option>
+																			<option>3</option>
+																			<option>4</option>
+																			<option>5</option>
+																			<option>6</option>
+																		</select>
+																	</div>
+																	<div class="custom-dropdown visible-xs">
+																		<div class="dk-selected">
+																			<a href="#date-modal" id="cardExpDate" data-toggle="modal" class="state-text">
+																				DD
+																			</a>
+																		</div>
+																	</div>
+																	<label class="error">Please select a valid Date</label>
+																</div>
+																<div class="col-sm-6 col-xs-6 error-msg">
+																	<div class="custom-dropdown hidden-xs">
+																		<select data-type="custom-dropdown">
+																			<option class="hidden-option">&nbsp;</option>
+																			<option>January</option>
+																			<option>February</option>
+																			<option>March</option>
+																			<option>April</option>
+																			<option>May</option>
+																			<option>June</option>
+																			<option>July</option>
+																			<option>August</option>
+																			<option>September</option>
+																			<option>October</option>
+																			<option>November</option>
+																			<option>December</option>
+																		</select>
+																	</div>
+																	<div class="custom-dropdown visible-xs">
+																		<div class="dk-selected">
+																			<a href="#month-modal" id="cardExpMonth" data-toggle="modal" class="state-text">
+																				MM
+																			</a>
+																		</div>
+																	</div>
+																	<label class="error">Please select a valid Month</label>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group dd-menu">
+													<div class="row">
+														<div class="col-sm-3 label-col cvc-label">
+															<label>Card Verifivation Code (CVC)</label>
+														</div>
+														<div class="col-sm-9  right-form-block">
+															<div class="row">
+																<div class="col-sm-6 col-xs-12">
+																	<input type="number" class="form-control input-focus" placeholder="CVC">
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="form-group">
+													<label class="checkbox-outer">
+														<input type="checkbox" class="icheck" name="icheck"> Don’t save my credit card details
+													</label>
+												</div>
+											</form>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="payment-time">
+											<h5>PAY OVER TIME</h5>
+											<div class="total-interest">
+												<p>
+													4x Interest fee payments over a 6-8 weeks period. Total: $159.
+													<a href="#afterpay-modal" class="engine-popup" title="Learn More" data-toggle="modal">Learn More</a>
+												</p>
+											</div>
+											<ul class="payment-history-list">
+												<li><span>1<sup>st</sup>payment<em>$39.95</em></span></li>
+												<li><span>2<sup>nd</sup>payment<em>$39.95</em></span></li>
+												<li><span>3<sup>rd</sup>payment<em>$39.95</em></span></li>
+												<li><span>4<sup>th</sup>payment<em>$39.95</em></span></li>
+											</ul>
+										</div>
+										<div role="tabpanel" class="tab-pane" id="paypal-express">
+											<h5>PAYPAL EXPRESS</h5>
+											<p>You will be redirected to Paypal website once you place your order.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-block promo-code-block">
+								<h3>Have A Promo Code?</h3>
+								<div class="inner-block">
+									<form class="form-horizontal">
+										<input type="text" class="form-control" id="inputNumber" placeholder="Enter it here">
+										<button type="Button" title="Apply" class="btn btn-default">Apply</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-5 right-block sticky-block">
+						<div class="pull-right">
+							<button type="button" class="btn btn-default active hidden-xs">
+								<span>Place Order </span>
+							</button>
+							<div class="order-details">
+								<ul class="details-listing">
+									<li class="clearfix">
+										<span>Subtotal</span>
+										<i>$378</i>
+									</li>
+									<li class="clearfix">
+										<span>Shipping</span>
+										<i>$15</i>
+									</li>
+									<li class="clearfix">
+										<span>Code 50Off</span>
+										<i>-$159</i>
+									</li>
+									<li class="clearfix">
+										<span>Total</span>
+										<i>$159</i>
+									</li>
+								</ul>
+							</div>
+							<div class="shipping-note hidden-xs">
+								<p>
+									All transactions are processed in $AUD. Your bank may charge international fees and currency conversion fees.
+								</p>
+								<p>
+									By placing your order you agree to our <a href="#" title="Terms &amp; Conditions">Terms &amp; Conditions, <a href="#" title="privacy">privacy</a> and  <a href="#" title="Returns policies">returns policies.</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="right-block visible-xs">
+					<button type="button" class="btn btn-default active ">
+						<span>Place Order ($339)</span>
+					</button>
+					<div class="shipping-note">
+						<p>
+							All transactions are processed in $AUD. Your bank may charge international fees and currency conversion fees.
+						</p>
+						<p>
+							By placing your order you agree to our <a href="#" title="Terms &amp; Conditions">Terms &amp; Conditions, <a href="#" title="privacy">privacy</a> and  <a href="#" title="Returns policies">returns policies.</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End Contant -->
+	</div>
+	<div id="login-modal" class="modal login-popup fluid-modal fade">
+		<div class="modal-dialog">
+			<div class="container">
+				<div role="alert" class="alert alert-danger">
+					<strong>Oh snap!</strong> Change a few things up and try submitting again.
+					<a title="close" aria-label="close" data-dismiss="alert" class="close" href="#">×</a>
+				</div>
+				<div class="alert alert-success fade in">
+					<a title="close" aria-label="close" data-dismiss="alert" class="close" href="#">×</a>
+					<strong>Success!</strong> This alert box indicates a successful or positive action.
+				</div>
+				<div class="popup-header">
+					<a href="#" title="Close" class="close" data-dismiss="modal" aria-hidden="true">
+						<img src="images/close-icon.svg" alt="Close">
+					</a>
+				</div>
+				<div class="popup-content">
+					<div class="top-block">
+						<div class="col">
+							<h3>Login <a class="pull-right visible-xs" title="Forgot your password?" href="#">Forgot your password?</a></h3>
+							<form class="form-horizontal">
+								<div class="form-group">
+									<input type="email" class="form-control" id="inputEmail" placeholder="e-mail">
+								</div>
+								<div class="form-group">
+									<input type="password" class="form-control" placeholder="password">
+								</div>
+								<div class="form-group form-btn">
+									<button type="submit" class="btn btn-default">Login</button>
+									<a href="#" title="Forgot your password?" class="pull-right hidden-xs">Forgot your password?</a>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="bottom-block">
+						<div class="col">
+							<h4>Don't have an account?</h4>
+							<span>Enter your email to receive exclusive offers.</span>
+							<form class="form-horizontal">
+								<div class="form-group">
+									<div class="row">
+										<div class="col-sm-6 mb15">
+											<input type="text" class="form-control" placeholder="First Name">
+										</div>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" placeholder="Last Name">
+										</div>
+									</div>
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control" placeholder="e-mail">
+								</div>
+								<div class="form-group form-btn">
+									<button type="submit" class="btn btn-default">Sign-Up</button>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="state-modal" class="dropdown-popup modal fade">
+		<div class="modal-dialog dropdown-popup-inner" id="mob-dropdown-lising">
+			<ul class="dropdown-lising" data-dismiss="modal">
+				<li><a href="#" class="active">Western Australia</a></li>
+				<li><a href="#">Northern Territory</a></li>
+				<li><a href="#">South Australia</a></li>
+				<li><a href="#">Queensland</a></li>
+				<li><a href="#">New South Wales</a></li>
+				<li><a href="#">Victoria</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="date-modal" class="dropdown-popup modal fade">
+		<div class="modal-dialog dropdown-popup-inner" id="mob-cardExpDate-lising">
+			<ul class="dropdown-lising" data-dismiss="modal">
+				<li><a href="#" class="active">1</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">2</a></li>
+				<li><a href="#">4</a></li>
+				<li><a href="#">5</a></li>
+				<li><a href="#">6</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="month-modal" class="dropdown-popup modal fade">
+		<div class="modal-dialog dropdown-popup-inner" id="mob-cardExpMonth-lising">
+			<ul class="dropdown-lising" data-dismiss="modal">
+				<li><a href="#" class="active">January</a></li>
+				<li><a href="#">February</a></li>
+				<li><a href="#">March</a></li>
+				<li><a href="#">April</a></li>
+				<li><a href="#">May</a></li>
+				<li><a href="#">June</a></li>
+				<li><a href="#">July</a></li>
+				<li><a href="#">August</a></li>
+				<li><a href="#">September</a></li>
+				<li><a href="#">October</a></li>
+				<li><a href="#">November</a></li>
+				<li><a href="#">December</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="modal afterpay-modal" id="afterpay-modal">
+		<div class="modal-dialog">
+			<div class="modal-content-scroll">
+				<a href="#" class="close" title="Close" data-dismiss="modal">
+					<img src="images/afterpay-close.svg" alt="">
+				</a>
+				<div class="popup-banner">
+					<img src="images/afterpay-banner.jpg" alt="" class="hidden-xs">
+					<img src="images/afterpay-banner-mobile.jpg" alt="" class="visible-xs">
+					<a href="#" title="Afterpay" class="popup-logo">
+						<img src="images/afterpay.svg" alt="Afterpay" class="img-responsive">
+					</a>
+					<div class="caption">
+						<h2>Take advantage of <span>Afterpay with Tailors Mark.</span></h2>
+						<p>Wear now, pay later.</p>
+					</div>
+				</div>
+				<div class="modal-content">
+					<div class="service-block">
+						<div class="row">
+							<div class="col-sm-4">
+								<div class="approval-content">
+									<div class="approval-img clearfix">
+										<img src="images/afterpay-icon-01.svg" class="img-responsive" alt="">
+										<h3>No <span>Interest</span></h3>
+									</div>
+									<p>100% interest-Free, No upfront fees.</p>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="approval-content second-child">
+									<div class="approval-img clearfix">
+										<img src="images/afterpay-icon-02.svg" class="img-responsive" alt="">
+										<h3>Instant <span>approval</span></h3>
+									</div>
+									<p>No application or cards, instant approval online.</p>
+								</div>
+							</div>
+							<div class="col-sm-4">
+								<div class="approval-content last-child">
+									<div class="approval-img clearfix">
+										<img src="images/afterpay-icon-03.svg" class="img-responsive" alt="">
+										<h3>Wear now, <span>pay later</span></h3>
+									</div>
+									<p>You will receive your order immediately.</p>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<h2 class="title"><span>To use the service, simply:</span></h2>
+							<div class="col-sm-4 service-content">
+								<h3>1. ADD &amp; CHECKOUT</h3>
+								<p>Add items to your shopping bag (up to the value of $1000)and the checkout as normal.</p>
+							</div>
+							<div class="col-sm-4 service-content">
+								<h3>2. select afterpay</h3>
+								<p>Select Afterpay as your payment method - you will be redirected to Afterpay.</p>
+							</div>
+							<div class="col-sm-4 service-content">
+								<h3>3. REGISTER/LOGIN</h3>
+								<p>Register or login to your Afterpay account and confirm payment.</p>
+							</div>
+						</div>
+					</div>
+					<div class="imp-news">
+						<h3>Important Imformation:</h3>
+						<p class="pb0">To make a purchase using afterpay, you need:</p>
+						<ul>
+							<li>- A Visa or Mastercard credit/debit card</li>
+							<li>- To be over 18 years of age</li>
+							<li>- An Australian residential address</li>
+						</ul>
+						<p>The payment arrangement is made with Afterpay and they will assess your order instantly. If Afterpay approves your order, new customers will pay their first instalment at the time of purchase, with payments over 6 weeks. When Afterpay knows you a little bit better, most returning Afterpay customers will pay their first instalment 14 days after purchase, with payments over 8 weeks from the time of purchase. The full payment schedule will be provided to you at time of purchase.</p>
+						<p>If you wish to return your goods, complete the online returns process as per the normal returns policy. If eligble for a refund, your initial payment will be returned in full and the remaining payments cancelled at no charge.</p>
+						<p>If you fail to make a payment, Afterpay will charge a late fee of $10, and if it's still overdue one week later, an additional $7 will be charged. These fees will be incurred for each payment that is late.</p>
+						<p>For more information about Afterpay terms and conditions, visit the Afterpay website.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

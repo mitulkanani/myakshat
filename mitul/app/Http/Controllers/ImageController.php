@@ -19,6 +19,7 @@ class ImageController extends Controller {
     public function show($id) {
         $user = Auth::user();
 
+        
         $model = Image::with('users')->find($id);
         if ($model) {
             return response()->json($model);
@@ -153,3 +154,12 @@ class ImageController extends Controller {
     }
 
 }
+
+/*
+
+
+
+ * 
+ * 
+ * */
+ 
